@@ -1,0 +1,6 @@
+{
+  "Name": "CAR-Contrarecibos",
+  "ProjectType": "Process",
+  "Description": "Registro de contrarecibos en EK",
+  "MainFile": "Main.xaml"
+}
