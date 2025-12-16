@@ -116,20 +116,26 @@
       <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Dispatcher" sap:VirtualizedContainerService.HintSize="1078,4903" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Dispatcher" sap:VirtualizedContainerService.HintSize="1113,11251" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtReqPagos" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtOrdenCompra" />
+      <Variable x:TypeArguments="x:String" Name="strOC_Pantalla" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Generar y conciliar Requisicion de pagos a subcontratistas" sap:VirtualizedContainerService.HintSize="742,4880" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Generar y conciliar Requisicion de pagos a subcontratistas" sap:VirtualizedContainerService.HintSize="846,11228" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strPathArchivoExcel" />
         <Variable x:TypeArguments="x:String" Name="strRESICO" />
+        <Variable x:TypeArguments="x:String" Name="strFondoGarantia" />
+        <Variable x:TypeArguments="x:String" Name="strImporteFondo" />
+        <Variable x:TypeArguments="x:String" Name="strSubTotal" />
+        <Variable x:TypeArguments="x:String" Name="strTotal" />
+        <Variable x:TypeArguments="x:String" Name="strPorIVA" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -137,13 +143,13 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Leer Excel y formatear dtReqPagos" sap:VirtualizedContainerService.HintSize="708,372" sap2010:WorkflowViewState.IdRef="Sequence_19">
+      <Sequence DisplayName="Leer Excel y formatear dtReqPagos" sap:VirtualizedContainerService.HintSize="812,1092" sap2010:WorkflowViewState.IdRef="Sequence_19">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="Construir nombre de archivo" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence DisplayName="Construir nombre de archivo" sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -170,9 +176,9 @@
 ).ToString + "-" + Now.ToString("yyyy") + ".xlsx"]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:BuildDataTable DataTable="[dtReqPagos]" DisplayName="Build Data Table -dtReqPagos" sap:VirtualizedContainerService.HintSize="416,83" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Contratista&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;TipoContrato&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;OC&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;CCO&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;ObraEK&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;NumContratista&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Convenio&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Importe&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;DescGrat&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Autoriza&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;NumEstimaConv&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;NumEstimaEK&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Observa&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;FG&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;OC_x0020_Importe&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+          <ui:BuildDataTable DataTable="[dtReqPagos]" DisplayName="Build Data Table -dtReqPagos" sap:VirtualizedContainerService.HintSize="416,83" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Contratista&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;TipoContrato&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;OC&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;CCO&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ObraEK&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;NumContratista&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Convenio&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Importe&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;DescGrat&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Autoriza&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;NumEstimaConv&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;NumEstimaEK&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Observa&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;FG&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;OC_x0020_Importe&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
         </Sequence>
-        <TryCatch DisplayName="Try Catch - Para leer el excel de requerimientos de pago" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch DisplayName="Try Catch - Para leer el excel de requerimientos de pago" sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -249,7 +255,42 @@
             </Sequence>
           </TryCatch.Finally>
         </TryCatch>
-        <Assign DisplayName="Assign - Elimina renglones vacios" sap:VirtualizedContainerService.HintSize="450,166" sap2010:WorkflowViewState.IdRef="Assign_3">
+        <Sequence DisplayName="Guardar numero de renglon del Excel en dtReqPagos" sap:VirtualizedContainerService.HintSize="486,720" sap2010:WorkflowViewState.IdRef="Sequence_36">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Int32" Name="intIDX" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="FilaExcel" DataTable="[dtReqPagos]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intIDX]" DataTable="[dtReqPagos]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="452,407" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+            <ui:ForEachRow.Body>
+              <ActivityAction x:TypeArguments="sd:DataRow">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,234" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("FilaExcel")]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[intIDX + 2]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEachRow.Body>
+          </ui:ForEachRow>
+        </Sequence>
+        <Assign DisplayName="Assign - Elimina renglones vacios" sap:VirtualizedContainerService.HintSize="486,166" sap2010:WorkflowViewState.IdRef="Assign_3">
           <Assign.To>
             <OutArgument x:TypeArguments="sd:DataTable">[dtReqPagos]</OutArgument>
           </Assign.To>
@@ -258,28 +299,28 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence DisplayName="Imprimir OC - Complementar dtReqPagos" sap:VirtualizedContainerService.HintSize="708,4425" sap2010:WorkflowViewState.IdRef="Sequence_17">
+      <Sequence DisplayName="Imprimir OC - Complementar dtReqPagos" sap:VirtualizedContainerService.HintSize="812,10053" sap2010:WorkflowViewState.IdRef="Sequence_17">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Program Manager" sap:VirtualizedContainerService.HintSize="674,4342" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" ScopeGuid="63dc4581-98fa-4ae5-9dae-307bc4c12f4e" Timeout="60" Version="V2">
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Program Manager" sap:VirtualizedContainerService.HintSize="778,9970" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" ScopeGuid="63dc4581-98fa-4ae5-9dae-307bc4c12f4e" Timeout="60" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="640,4022" sap2010:WorkflowViewState.IdRef="Sequence_18">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="744,9650" sap2010:WorkflowViewState.IdRef="Sequence_18">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="606,61" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="710,1735" sap2010:WorkflowViewState.IdRef="Sequence_21">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -342,7 +383,7 @@
                     </uix:NApplicationCard.TargetApp>
                   </uix:NApplicationCard>
                 </Sequence>
-                <Sequence DisplayName="Elegir menu impresion orden de compra" sap:VirtualizedContainerService.HintSize="606,61" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                <Sequence DisplayName="Elegir menu impresion orden de compra" sap:VirtualizedContainerService.HintSize="710,61" sap2010:WorkflowViewState.IdRef="Sequence_22">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -416,25 +457,25 @@
                     </ui:Click.Target>
                   </ui:Click>
                 </Sequence>
-                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Reporte de Ordenes de Compra [W_SOC450]" sap:VirtualizedContainerService.HintSize="606,3834" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" ScopeGuid="c3defe0d-d159-4c59-8d41-b9908d0efb5d" Timeout="60" Version="V2">
+                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Reporte de Ordenes de Compra [W_SOC450]" sap:VirtualizedContainerService.HintSize="710,7788" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" ScopeGuid="c3defe0d-d159-4c59-8d41-b9908d0efb5d" Timeout="60" Version="V2">
                   <uix:NApplicationCard.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="572,3508" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="676,7462" sap2010:WorkflowViewState.IdRef="Sequence_25">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtReqPagos]" DisplayName="For Each Row in Data Table dtReqPagos" sap:VirtualizedContainerService.HintSize="538,3442" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtReqPagos]" DisplayName="For Each Row in Data Table dtReqPagos" sap:VirtualizedContainerService.HintSize="642,7396" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                           <ui:ForEachRow.Body>
                             <ActivityAction x:TypeArguments="sd:DataRow">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="536,3263" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="640,7217" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:String" Name="strCCO" />
                                   <Variable x:TypeArguments="x:String" Name="strOC" />
@@ -444,7 +485,7 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="502,184" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="606,184" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                                   <ui:MultipleAssign.AssignOperations>
                                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -466,21 +507,21 @@
                                     </scg:List>
                                   </ui:MultipleAssign.AssignOperations>
                                 </ui:MultipleAssign>
-                                <Sequence DisplayName="Ingresar CCO y OC" sap:VirtualizedContainerService.HintSize="502,2897" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                <Sequence DisplayName="Ingresar CCO y OC" sap:VirtualizedContainerService.HintSize="606,4924" sap2010:WorkflowViewState.IdRef="Sequence_23">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="b7bc6e0f-8539-4e3c-96e2-3c2843477057" DisplayName="Reporte de ordenes de compra" sap:VirtualizedContainerService.HintSize="468,1817" sap2010:WorkflowViewState.IdRef="CVScope_1" SendOnPremData="False" Version="V6">
+                                  <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="b7bc6e0f-8539-4e3c-96e2-3c2843477057" DisplayName="Reporte de ordenes de compra" sap:VirtualizedContainerService.HintSize="556,61" sap2010:WorkflowViewState.IdRef="CVScope_1" SendOnPremData="False" Version="V6">
                                     <p:CVScope.Body>
                                       <ActivityAction x:TypeArguments="x:Object">
                                         <ActivityAction.Argument>
                                           <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                                         </ActivityAction.Argument>
                                         <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_26">
-                                          <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="3" Descriptor="[&quot;Target: InputBox (131,110,40,18)&quot; +&#xD;&#xA;&quot;Anchor: Text 'CC' (106,113,17,11)&quot;]" DesignTimeCacheId="46a6b4b7-e0c1-492f-98d0-f667e2b9a27d" DesignTimeScaleFactor="1" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,227" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_1" InformativeScreenshot="8ad9e924b1517b3ff0fb8d4aa777bd4d" NumberOfScrolls="2" ScrollDirection="None" Text="[strCCO]" Version="V6">
+                                          <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="3" Descriptor="[&quot;Target: InputBox (131,110,40,18)&quot; +&#xA;&quot;Anchor: Text 'CC' (106,113,17,11)&quot;]" DesignTimeCacheId="46a6b4b7-e0c1-492f-98d0-f667e2b9a27d" DesignTimeScaleFactor="1" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,227" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_1" InformativeScreenshot="8ad9e924b1517b3ff0fb8d4aa777bd4d" NumberOfScrolls="2" ScrollDirection="None" Text="[strCCO]" Version="V6">
                                             <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
                                               <uc:CvDescriptor Id="b39c8a85-8085-4bc9-b20e-e0f04226a604">
                                                 <uc:CvDescriptor.Anchors>
@@ -505,7 +546,7 @@
                                             </p:CvTypeIntoWithDescriptor.Target>
                                           </p:CvTypeIntoWithDescriptor>
                                           <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="400,220" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_10" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3" />
-                                          <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="2" Descriptor="[&quot;Target: InputBox (209,261,69,19)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Inicial:' (164,264,30,11)&quot;]" DesignTimeCacheId="0a04a52c-7b98-4549-b9bd-f3dcb3459703" DesignTimeScaleFactor="1" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,227" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_2" InformativeScreenshot="47a5dbf51260ced135e1504419d3d5ba" NumberOfScrolls="2" ScrollDirection="None" Text="[strOC]" Version="V6">
+                                          <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="2" Descriptor="[&quot;Target: InputBox (209,261,69,19)&quot; +&#xA;&quot;Anchor: Text 'Inicial:' (164,264,30,11)&quot;]" DesignTimeCacheId="0a04a52c-7b98-4549-b9bd-f3dcb3459703" DesignTimeScaleFactor="1" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,227" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_2" InformativeScreenshot="47a5dbf51260ced135e1504419d3d5ba" NumberOfScrolls="2" ScrollDirection="None" Text="[strOC]" Version="V6">
                                             <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
                                               <uc:CvDescriptor Id="2736a7a9-54b6-43d5-aba8-2158e8fbcc50">
                                                 <uc:CvDescriptor.Anchors>
@@ -530,7 +571,7 @@
                                             </p:CvTypeIntoWithDescriptor.Target>
                                           </p:CvTypeIntoWithDescriptor>
                                           <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="400,220" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_11" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3" />
-                                          <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="2" DelayMS="2" Descriptor="[&quot;Target: InputBox (391,261,68,19)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Final:' (348,264,26,11)&quot;]" DesignTimeCacheId="0a04a52c-7b98-4549-b9bd-f3dcb3459703" DesignTimeScaleFactor="1" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,227" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_3" InformativeScreenshot="b0304818bb305510f8f91d4b571fa450" NumberOfScrolls="2" ScrollDirection="None" Text="[strOC]" Version="V6">
+                                          <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="2" DelayMS="2" Descriptor="[&quot;Target: InputBox (391,261,68,19)&quot; +&#xA;&quot;Anchor: Text 'Final:' (348,264,26,11)&quot;]" DesignTimeCacheId="0a04a52c-7b98-4549-b9bd-f3dcb3459703" DesignTimeScaleFactor="1" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,227" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_3" InformativeScreenshot="b0304818bb305510f8f91d4b571fa450" NumberOfScrolls="2" ScrollDirection="None" Text="[strOC]" Version="V6">
                                             <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
                                               <uc:CvDescriptor Id="31abecc4-db6d-4ee2-8614-3a991debbad7">
                                                 <uc:CvDescriptor.Anchors>
@@ -559,6 +600,9 @@
                                         </Sequence>
                                       </ActivityAction>
                                     </p:CVScope.Body>
+                                    <p:CVScope.DesignTimeCache>
+                                      <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+                                    </p:CVScope.DesignTimeCache>
                                     <p:CVScope.DesignTimeCacheContainer>
                                       <uc:CvCacheContainer>
                                         <uc:CvCacheContainer.Caches>
@@ -956,12 +1000,12 @@
                                     </p:CVScope.UseLocalServer>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </p:CVScope>
-                                  <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="01a82dc5-7ec8-4630-9965-41f83e95e1d1" DisplayName="Seleccionar procesar" sap:VirtualizedContainerService.HintSize="468,61" sap2010:WorkflowViewState.IdRef="CVScope_3" SendOnPremData="False" Version="V6">
+                                  <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="01a82dc5-7ec8-4630-9965-41f83e95e1d1" DisplayName="Seleccionar procesar" sap:VirtualizedContainerService.HintSize="556,61" sap2010:WorkflowViewState.IdRef="CVScope_3" SendOnPremData="False" Version="V6">
                                     <p:CVScope.Body>
                                       <ActivityAction x:TypeArguments="x:Object">
                                         <ActivityAction.Argument>
@@ -1000,6 +1044,9 @@
                                         </Sequence>
                                       </ActivityAction>
                                     </p:CVScope.Body>
+                                    <p:CVScope.DesignTimeCache>
+                                      <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+                                    </p:CVScope.DesignTimeCache>
                                     <p:CVScope.DesignTimeCacheContainer>
                                       <uc:CvCacheContainer>
                                         <uc:CvCacheContainer.Caches>
@@ -1220,14 +1267,14 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </p:CVScope>
-                                  <Sequence DisplayName="Leer Pantalla Impresion" sap:VirtualizedContainerService.HintSize="468,919" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                  <Sequence DisplayName="Leer Pantalla Impresion" sap:VirtualizedContainerService.HintSize="556,4702" sap2010:WorkflowViewState.IdRef="Sequence_27">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="e9747e38-f39e-4ddd-8269-f0ca7df7f8d4" DisplayName="Maximizar la ventana" sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="CVScope_4" SendOnPremData="False" Version="V6">
+                                    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="e9747e38-f39e-4ddd-8269-f0ca7df7f8d4" DisplayName="Maximizar la ventana" sap:VirtualizedContainerService.HintSize="522,61" sap2010:WorkflowViewState.IdRef="CVScope_4" SendOnPremData="False" Version="V6">
                                       <p:CVScope.Body>
                                         <ActivityAction x:TypeArguments="x:Object">
                                           <ActivityAction.Argument>
@@ -1266,6 +1313,9 @@
                                           </Sequence>
                                         </ActivityAction>
                                       </p:CVScope.Body>
+                                      <p:CVScope.DesignTimeCache>
+                                        <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+                                      </p:CVScope.DesignTimeCache>
                                       <p:CVScope.DesignTimeCacheContainer>
                                         <uc:CvCacheContainer>
                                           <uc:CvCacheContainer.Caches>
@@ -1592,7 +1642,7 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </p:CVScope>
-                                    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="94fa9bdb-d28f-4f12-ae21-00b5e0338474" DisplayName="Leer Reporte de Orden de Compra" sap:VirtualizedContainerService.HintSize="520,2283" sap2010:WorkflowViewState.IdRef="CVScope_2" SendOnPremData="False" Version="V6">
+                                    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="94fa9bdb-d28f-4f12-ae21-00b5e0338474" DisplayName="Leer Reporte de Orden de Compra" sap:VirtualizedContainerService.HintSize="522,4437" sap2010:WorkflowViewState.IdRef="CVScope_2" SendOnPremData="False" Version="V6">
                                       <p:CVScope.Body>
                                         <ActivityAction x:TypeArguments="x:Object">
                                           <ActivityAction.Argument>
@@ -1600,13 +1650,9 @@
                                           </ActivityAction.Argument>
                                           <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_28">
                                             <Sequence.Variables>
-                                              <Variable x:TypeArguments="x:String" Name="strOC_Pantalla" />
-                                              <Variable x:TypeArguments="x:String" Name="strSubTotal" />
-                                              <Variable x:TypeArguments="x:String" Name="strTotal" />
-                                              <Variable x:TypeArguments="x:String" Name="strPorIVA" />
                                               <Variable x:TypeArguments="x:Boolean" Name="EsRESICO" />
                                             </Sequence.Variables>
-                                            <p:CvExtractDataTableWithDescriptor InRegion="{x:Null}" AddHeaders="True" DelayScreenshotAfterScroll="250" Descriptor="[&quot;Target: Table (27,348,743,132)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Almacen:' (47,335,42,10)&quot;]" DesignTimeCacheId="94fa9bdb-d28f-4f12-ae21-00b5e0338474" DesignTimeScaleFactor="1" DisplayName="CV Extract Table - Table" sap:VirtualizedContainerService.HintSize="486,228" sap2010:WorkflowViewState.IdRef="CvExtractDataTableWithDescriptor_1" IgnoreEmptyRows="False" InformativeScreenshot="b3783ae5dd7c1270859ab01556f16b12" MaxTableScrollHeightInPixels="30000" NumberOfScrolls="2" RefreshBefore="True" Result="[dtOrdenCompra]" Scroll="False" ScrollDirection="None" Version="V6">
+                                            <p:CvExtractDataTableWithDescriptor InRegion="{x:Null}" AddHeaders="True" DelayBefore="2" DelayScreenshotAfterScroll="250" Descriptor="[&quot;Target: Table (27,348,743,132)&quot; +&#xA;&quot;Anchor: Text 'Almacen:' (47,335,42,10)&quot;]" DesignTimeCacheId="94fa9bdb-d28f-4f12-ae21-00b5e0338474" DesignTimeScaleFactor="1" DisplayName="CV Extract Table - Table" sap:VirtualizedContainerService.HintSize="488,228" sap2010:WorkflowViewState.IdRef="CvExtractDataTableWithDescriptor_1" IgnoreEmptyRows="False" InformativeScreenshot="b3783ae5dd7c1270859ab01556f16b12" MaxTableScrollHeightInPixels="30000" NumberOfScrolls="2" RefreshBefore="True" Result="[dtOrdenCompra]" Scroll="False" ScrollDirection="None" Version="V6">
                                               <p:CvExtractDataTableWithDescriptor.DesignTimeDescriptor>
                                                 <uc:CvDescriptor Id="b17bebd3-bc89-4a64-a5eb-632d3ebd610b">
                                                   <uc:CvDescriptor.Anchors>
@@ -1620,7 +1666,76 @@
                                                 </uc:CvDescriptor>
                                               </p:CvExtractDataTableWithDescriptor.DesignTimeDescriptor>
                                             </p:CvExtractDataTableWithDescriptor>
-                                            <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: AnyWordGroup (692,81,67,13)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Orden de Compra:' (553,81,118,16)&quot;]" DesignTimeCacheId="94fa9bdb-d28f-4f12-ae21-00b5e0338474" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="486,259" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="0ffa93814d9e69b3ace973f27080b209" NumberOfScrolls="2" RefreshBefore="True" Result="[strOC_Pantalla]" ScrollDirection="None" Version="V6">
+                                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtOrdenCompra]" DisplayName="For Each Row in dtOrdenCompra obtiene Fondo Garantia" sap:VirtualizedContainerService.HintSize="488,1271" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+                                              <ui:ForEachRow.Body>
+                                                <ActivityAction x:TypeArguments="sd:DataRow">
+                                                  <ActivityAction.Argument>
+                                                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                                                  </ActivityAction.Argument>
+                                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,1085" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <Assign sap:VirtualizedContainerService.HintSize="452,179" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:String">[strFondoGarantia]</OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:String">[CurrentRow("Insumo").ToString]</InArgument>
+                                                      </Assign.Value>
+                                                    </Assign>
+                                                    <If Condition="[strFondoGarantia.Trim = &quot;6990001&quot;]" sap:VirtualizedContainerService.HintSize="452,842" sap2010:WorkflowViewState.IdRef="If_4">
+                                                      <If.Then>
+                                                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,474" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <Assign sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:String">[strImporteFondo]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:String">[CurrentRow("Importe").ToString]</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                          <Assign sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:String">[strImporteFondo]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:String">[strImporteFondo.Replace("-", "").Replace("$", "").Replace(",", "").Trim()]</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                          <ui:Break sap:VirtualizedContainerService.HintSize="416,52" sap2010:WorkflowViewState.IdRef="Break_1" />
+                                                        </Sequence>
+                                                      </If.Then>
+                                                      <If.Else>
+                                                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,234" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <Assign sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:String">[strImporteFondo]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:String">["0"]</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                        </Sequence>
+                                                      </If.Else>
+                                                    </If>
+                                                  </Sequence>
+                                                </ActivityAction>
+                                              </ui:ForEachRow.Body>
+                                            </ui:ForEachRow>
+                                            <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: AnyWordGroup (692,81,67,13)&quot; +&#xA;&quot;Anchor: Text 'Orden de Compra:' (553,81,118,16)&quot;]" DesignTimeCacheId="94fa9bdb-d28f-4f12-ae21-00b5e0338474" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="488,259" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="0ffa93814d9e69b3ace973f27080b209" NumberOfScrolls="2" RefreshBefore="True" Result="[strOC_Pantalla]" ScrollDirection="None" Version="V6">
                                               <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                 <uc:CvDescriptor Id="8eae0146-f7d3-46eb-90d8-ec6294fcccc2">
                                                   <uc:CvDescriptor.Anchors>
@@ -1634,7 +1749,7 @@
                                                 </uc:CvDescriptor>
                                               </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                             </p:CvGetTextWithDescriptor>
-                                            <p:CvElementExistsWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: Text '19 1.25% ISR SUBCONTRATOS RESICO' (256,496,179,10)&quot;]" DesignTimeCacheId="ad0f01e1-14e2-4877-918f-6c602f14b385" DesignTimeScaleFactor="1" DisplayName="CV Element Exists - Text" sap:VirtualizedContainerService.HintSize="486,174" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_1" InformativeScreenshot="016120dd09c7d94f10fd951bb5e4b6cf" NumberOfScrolls="2" Result="[EsRESICO]" ScrollDirection="None" TimeoutMS="2000" Version="V6">
+                                            <p:CvElementExistsWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: Text '19 1.25% ISR SUBCONTRATOS RESICO' (256,496,179,10)&quot;]" DesignTimeCacheId="ad0f01e1-14e2-4877-918f-6c602f14b385" DesignTimeScaleFactor="1" DisplayName="CV Element Exists - Text" sap:VirtualizedContainerService.HintSize="488,174" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_1" InformativeScreenshot="016120dd09c7d94f10fd951bb5e4b6cf" NumberOfScrolls="2" Result="[EsRESICO]" ScrollDirection="None" TimeoutMS="2000" Version="V6">
                                               <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                                                 <uc:CvDescriptor Id="7ae7e4cf-871f-435e-b081-c25ba4772bb3">
                                                   <uc:CvDescriptor.Target>
@@ -1643,7 +1758,7 @@
                                                 </uc:CvDescriptor>
                                               </p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                                             </p:CvElementExistsWithDescriptor>
-                                            <If Condition="[EsRESICO]" sap:VirtualizedContainerService.HintSize="486,1182" sap2010:WorkflowViewState.IdRef="If_2">
+                                            <If Condition="[EsRESICO]" sap:VirtualizedContainerService.HintSize="488,1989" sap2010:WorkflowViewState.IdRef="If_2">
                                               <If.Then>
                                                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484,923" sap2010:WorkflowViewState.IdRef="Sequence_34">
                                                   <sap:WorkflowViewStateService.ViewState>
@@ -1658,7 +1773,7 @@
                                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: AnyText (513,441,48,10)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Subtotall' (363,441,36,10)&quot;]" DesignTimeCacheId="ad0f01e1-14e2-4877-918f-6c602f14b385" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="416,259" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_5" InformativeScreenshot="4f5dc424e6c66dfd451dd9037d98d0a8" NumberOfScrolls="2" RefreshBefore="True" Result="[strSubTotal]" ScrollDirection="None" Version="V6">
+                                                    <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: AnyText (513,441,48,10)&quot; +&#xA;&quot;Anchor: Text 'Subtotall' (363,441,36,10)&quot;]" DesignTimeCacheId="ad0f01e1-14e2-4877-918f-6c602f14b385" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="416,259" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_5" InformativeScreenshot="4f5dc424e6c66dfd451dd9037d98d0a8" NumberOfScrolls="2" RefreshBefore="True" Result="[strSubTotal]" ScrollDirection="None" Version="V6">
                                                       <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                         <uc:CvDescriptor Id="43c6bd6b-68fd-41fd-a08f-7797c12a3e91">
                                                           <uc:CvDescriptor.Anchors>
@@ -1672,7 +1787,7 @@
                                                         </uc:CvDescriptor>
                                                       </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                     </p:CvGetTextWithDescriptor>
-                                                    <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: AnyText (519,496,41,12)&quot; +&#xD;&#xA;&quot;Anchor: Text '19 1.25% ISR SUBCONTRATOS RESICO' (256,496,179,10)&quot;]" DesignTimeCacheId="ad0f01e1-14e2-4877-918f-6c602f14b385" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="416,259" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_6" InformativeScreenshot="82228de9d138f7fffe8247a3278b9d56" NumberOfScrolls="2" RefreshBefore="True" Result="[strRESICO]" ScrollDirection="None" Version="V6">
+                                                    <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: AnyText (519,496,41,12)&quot; +&#xA;&quot;Anchor: Text '19 1.25% ISR SUBCONTRATOS RESICO' (256,496,179,10)&quot;]" DesignTimeCacheId="ad0f01e1-14e2-4877-918f-6c602f14b385" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="416,259" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_6" InformativeScreenshot="82228de9d138f7fffe8247a3278b9d56" NumberOfScrolls="2" RefreshBefore="True" Result="[strRESICO]" ScrollDirection="None" Version="V6">
                                                       <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                         <uc:CvDescriptor Id="cc77c633-328c-412c-a1ac-b86e2fd3a649">
                                                           <uc:CvDescriptor.Anchors>
@@ -1686,7 +1801,7 @@
                                                         </uc:CvDescriptor>
                                                       </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                     </p:CvGetTextWithDescriptor>
-                                                    <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: AnyText (511,529,48,10)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Totall Finall' (354,529,44,10)&quot;]" DesignTimeCacheId="ad0f01e1-14e2-4877-918f-6c602f14b385" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="416,250" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_7" InformativeScreenshot="f685b648c6d93bf676dfabae0469a656" NumberOfScrolls="2" RefreshBefore="True" Result="[strTotal]" ScrollDirection="None" Version="V6">
+                                                    <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: AnyText (511,529,48,10)&quot; +&#xA;&quot;Anchor: Text 'Totall Finall' (354,529,44,10)&quot;]" DesignTimeCacheId="ad0f01e1-14e2-4877-918f-6c602f14b385" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="416,250" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_7" InformativeScreenshot="f685b648c6d93bf676dfabae0469a656" NumberOfScrolls="2" RefreshBefore="True" Result="[strTotal]" ScrollDirection="None" Version="V6">
                                                       <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                         <uc:CvDescriptor Id="19adcbf5-ff47-48dd-8fd8-dcb848217555">
                                                           <uc:CvDescriptor.Anchors>
@@ -1704,20 +1819,20 @@
                                                 </Sequence>
                                               </If.Then>
                                               <If.Else>
-                                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="484,116" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="484,923" sap2010:WorkflowViewState.IdRef="Sequence_35">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <Sequence DisplayName="CV Get Text - ISR" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                                  <Sequence DisplayName="CV Get Text - ISR" sap:VirtualizedContainerService.HintSize="450,859" sap2010:WorkflowViewState.IdRef="Sequence_32">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: AnyText (689,734,48,10)&quot; +&#xD;&#xA;&quot;Anchor: Text 'S U B T O TA L' (572,734,65,10)&quot;]" DesignTimeCacheId="94fa9bdb-d28f-4f12-ae21-00b5e0338474" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="450,259" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_2" InformativeScreenshot="f9fe824725f891e92103c065c2e89bae" NumberOfScrolls="2" RefreshBefore="True" Result="[strSubTotal]" ScrollDirection="None" Version="V6">
+                                                    <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: AnyText (689,734,48,10)&quot; +&#xA;&quot;Anchor: Text 'S U B T O TA L' (572,734,65,10)&quot;]" DesignTimeCacheId="94fa9bdb-d28f-4f12-ae21-00b5e0338474" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="416,259" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_2" InformativeScreenshot="f9fe824725f891e92103c065c2e89bae" NumberOfScrolls="2" RefreshBefore="True" Result="[strSubTotal]" ScrollDirection="None" Version="V6">
                                                       <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                         <uc:CvDescriptor Id="7672fe13-c996-46ce-9d8e-a105a8ef8242">
                                                           <uc:CvDescriptor.Anchors>
@@ -1731,7 +1846,7 @@
                                                         </uc:CvDescriptor>
                                                       </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                     </p:CvGetTextWithDescriptor>
-                                                    <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: AnyWordGroup (605,748,37,10)&quot; +&#xD;&#xA;&quot;Anchor: Text 'I.V.A.' (579,748,24,10)&quot;]" DesignTimeCacheId="94fa9bdb-d28f-4f12-ae21-00b5e0338474" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="450,259" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_4" InformativeScreenshot="0bac6b42d8a684a1422c2e62d7ecacae" NumberOfScrolls="2" RefreshBefore="True" Result="[strPorIVA]" ScrollDirection="None" Version="V6">
+                                                    <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: AnyWordGroup (605,748,37,10)&quot; +&#xA;&quot;Anchor: Text 'I.V.A.' (579,748,24,10)&quot;]" DesignTimeCacheId="94fa9bdb-d28f-4f12-ae21-00b5e0338474" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="416,259" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_4" InformativeScreenshot="0bac6b42d8a684a1422c2e62d7ecacae" NumberOfScrolls="2" RefreshBefore="True" Result="[strPorIVA]" ScrollDirection="None" Version="V6">
                                                       <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                         <uc:CvDescriptor Id="a04e13e9-0427-4e0d-bca0-4b76b79bd0c6">
                                                           <uc:CvDescriptor.Anchors>
@@ -1745,7 +1860,7 @@
                                                         </uc:CvDescriptor>
                                                       </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                     </p:CvGetTextWithDescriptor>
-                                                    <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: AnyWordGroup (689,762,64,10)&quot; +&#xD;&#xA;&quot;Anchor: Text 'TOTAL:' (595,762,47,10)&quot;]" DesignTimeCacheId="94fa9bdb-d28f-4f12-ae21-00b5e0338474" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="450,259" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_3" InformativeScreenshot="71c7a372ab51fa08d8b75d424bda39e8" NumberOfScrolls="2" RefreshBefore="True" Result="[strTotal]" ScrollDirection="None" Version="V6">
+                                                    <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: AnyWordGroup (689,762,64,10)&quot; +&#xA;&quot;Anchor: Text 'TOTAL:' (595,762,47,10)&quot;]" DesignTimeCacheId="94fa9bdb-d28f-4f12-ae21-00b5e0338474" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="416,250" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_3" InformativeScreenshot="71c7a372ab51fa08d8b75d424bda39e8" NumberOfScrolls="2" RefreshBefore="True" Result="[strTotal]" ScrollDirection="None" Version="V6">
                                                       <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                         <uc:CvDescriptor Id="7b91209d-e773-4f7e-871e-bc467c6df236">
                                                           <uc:CvDescriptor.Anchors>
@@ -1763,10 +1878,13 @@
                                                 </Sequence>
                                               </If.Else>
                                             </If>
-                                            <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="486,118" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                                            <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="488,118" sap2010:WorkflowViewState.IdRef="Delay_3" />
                                           </Sequence>
                                         </ActivityAction>
                                       </p:CVScope.Body>
+                                      <p:CVScope.DesignTimeCache>
+                                        <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+                                      </p:CVScope.DesignTimeCache>
                                       <p:CVScope.DesignTimeCacheContainer>
                                         <uc:CvCacheContainer>
                                           <uc:CvCacheContainer.Caches>
@@ -3128,7 +3246,7 @@
                                           <ActivityFunc.Argument>
                                             <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
                                           </ActivityFunc.Argument>
-                                          <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="486,25" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_2" Image="[Image]" Language="en" NoopExecution="False" Profile="Screen" Scale="1" Timeout="100000" />
+                                          <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="488,25" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_2" Image="[Image]" Language="en" NoopExecution="False" Profile="Screen" Scale="1" Timeout="100000" />
                                         </ActivityFunc>
                                       </p:CVScope.OCREngine>
                                       <p:CVScope.Target>
@@ -3143,19 +3261,19 @@
                                       </p:CVScope.UseLocalServer>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </p:CVScope>
-                                    <p:CVScope ContinueOnError="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DelayBefore="2" DesignTimeCacheId="b748cb41-43f5-4a54-9431-10de20605b6c" DisplayName="Salir Impresion" sap:VirtualizedContainerService.HintSize="434,572" sap2010:WorkflowViewState.IdRef="CVScope_5" SendOnPremData="False" Version="V6">
+                                    <p:CVScope ContinueOnError="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DelayBefore="2" DesignTimeCacheId="b748cb41-43f5-4a54-9431-10de20605b6c" DisplayName="Salir Impresion" sap:VirtualizedContainerService.HintSize="522,61" sap2010:WorkflowViewState.IdRef="CVScope_5" SendOnPremData="False" Version="V6">
                                       <p:CVScope.Body>
                                         <ActivityAction x:TypeArguments="x:Object">
                                           <ActivityAction.Argument>
                                             <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                                           </ActivityAction.Argument>
                                           <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_31">
-                                            <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Icon (637,47,19,20)&quot; +&#xD;&#xA;&quot;Anchor: Icon (492,46,21,21)&quot; +&#xD;&#xA;&quot;Anchor: Text 'DESARROLLADORA CARPIN SA DE CV - [Reporte de Ordenes de Compra [W_SOC450]]' (357,5,454,15)&quot;]" DesignTimeCacheId="b748cb41-43f5-4a54-9431-10de20605b6c" DesignTimeScaleFactor="1" DisplayName="CV Click - Icon" sap:VirtualizedContainerService.HintSize="400,214" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_3" InformativeScreenshot="234597d0663116aa77aed54e0af738f6" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
+                                            <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Icon (637,47,19,20)&quot; +&#xA;&quot;Anchor: Icon (492,46,21,21)&quot; +&#xA;&quot;Anchor: Text 'DESARROLLADORA CARPIN SA DE CV - [Reporte de Ordenes de Compra [W_SOC450]]' (357,5,454,15)&quot;]" DesignTimeCacheId="b748cb41-43f5-4a54-9431-10de20605b6c" DesignTimeScaleFactor="1" DisplayName="CV Click - Icon" sap:VirtualizedContainerService.HintSize="400,214" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_3" InformativeScreenshot="234597d0663116aa77aed54e0af738f6" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
                                               <p:CvClickWithDescriptor.CursorPosition>
                                                 <ui:CursorPosition Position="Center">
                                                   <ui:CursorPosition.OffsetX>
@@ -3193,6 +3311,9 @@
                                           </Sequence>
                                         </ActivityAction>
                                       </p:CVScope.Body>
+                                      <p:CVScope.DesignTimeCache>
+                                        <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+                                      </p:CVScope.DesignTimeCache>
                                       <p:CVScope.DesignTimeCacheContainer>
                                         <uc:CvCacheContainer>
                                           <uc:CvCacheContainer.Caches>
@@ -3908,12 +4029,12 @@
                                       </p:CVScope.UseLocalServer>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </p:CVScope>
-                                    <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="2" DisplayName="Minimizar la ventana" sap:VirtualizedContainerService.HintSize="434,134" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                    <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="2" DisplayName="Minimizar la ventana" sap:VirtualizedContainerService.HintSize="522,52" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT">
                                       <ui:Click.CursorPosition>
                                         <ui:CursorPosition Position="Center">
                                           <ui:CursorPosition.OffsetX>
@@ -3934,10 +4055,107 @@
                                           </ui:Target.WaitForReady>
                                         </ui:Target>
                                       </ui:Click.Target>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
                                     </ui:Click>
                                   </Sequence>
                                 </Sequence>
-                                <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="502,118" sap2010:WorkflowViewState.IdRef="Delay_4" />
+                                <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="606,127" sap2010:WorkflowViewState.IdRef="Delay_4" />
+                                <TryCatch DisplayName="Try Catch - Actualiza la Hoja de Excel" sap:VirtualizedContainerService.HintSize="606,1800" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <TryCatch.Try>
+                                    <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="604,1367" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="570,1303" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
+                                        <ueab:ExcelProcessScopeX.Body>
+                                          <ActivityAction x:TypeArguments="ui:IExcelProcess">
+                                            <ActivityAction.Argument>
+                                              <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+                                            </ActivityAction.Argument>
+                                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="536,1189" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" SensitivityLabel="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="502,1125" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" SensitivityOperation="None" WorkbookPath="[strPathArchivoExcel]">
+                                                <ueab:ExcelApplicationCard.Body>
+                                                  <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                                                    </ActivityAction.Argument>
+                                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,825" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                                      <Sequence.Variables>
+                                                        <Variable x:TypeArguments="x:String" Name="strNumRenglon" />
+                                                      </Sequence.Variables>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <Assign sap:VirtualizedContainerService.HintSize="434,179" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="x:String">[strNumRenglon]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="x:String">[CurrentRow("FilaExcel").ToString]</InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
+                                                      <ueab:WriteCellX Cell="[Excel.SelectedSheet.Cell(&quot;N&quot; + strNumRenglon)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,197" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[strImporteFondo]" />
+                                                      <ueab:WriteCellX Cell="[Excel.SelectedSheet.Cell(&quot;O&quot; + strNumRenglon)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,197" sap2010:WorkflowViewState.IdRef="WriteCellX_2" Value="[strTotal]" />
+                                                      <ueab:WriteCellX Cell="[Excel.SelectedSheet.Cell(&quot;P&quot; + strNumRenglon)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,188" sap2010:WorkflowViewState.IdRef="WriteCellX_3" Value="[strRESICO]" />
+                                                    </Sequence>
+                                                  </ActivityAction>
+                                                </ueab:ExcelApplicationCard.Body>
+                                              </ueab:ExcelApplicationCard>
+                                            </Sequence>
+                                          </ActivityAction>
+                                        </ueab:ExcelProcessScopeX.Body>
+                                      </ueab:ExcelProcessScopeX>
+                                    </Sequence>
+                                  </TryCatch.Try>
+                                  <TryCatch.Catches>
+                                    <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                      <ActivityAction x:TypeArguments="s:Exception">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                        </ActivityAction.Argument>
+                                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="604,25" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </ActivityAction>
+                                    </Catch>
+                                  </TryCatch.Catches>
+                                  <TryCatch.Finally>
+                                    <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="604,226" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="570,162" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="EXCEL.EXE" />
+                                    </Sequence>
+                                  </TryCatch.Finally>
+                                </TryCatch>
+                                <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="606,118" sap2010:WorkflowViewState.IdRef="Delay_5" />
                               </Sequence>
                             </ActivityAction>
                           </ui:ForEachRow.Body>
