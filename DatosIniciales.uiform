@@ -1,0 +1,49 @@
+﻿{
+  "Metadata": {
+    "Id": "821dc48b-8ee0-48fa-b94c-043cc71d3317",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "DatosIniciales",
+    "Theme": "Default",
+    "ShowInTaskbar": true,
+    "ShowMargin": true,
+    "CustomStyle": ""
+  },
+  "Data": {
+    "components": [
+      {
+        "label": "Opciones",
+        "widget": "choicesjs",
+        "tableView": true,
+        "data": {
+          "values": [
+            {
+              "label": "Selecciona una opción",
+              "value": "selecciona"
+            },
+            {
+              "label": "Prepara información",
+              "value": "dispatcher"
+            },
+            {
+              "label": "Registra Contrarecibos",
+              "value": "performer"
+            }
+          ]
+        },
+        "key": "select",
+        "type": "select",
+        "input": true
+      },
+      {
+        "type": "button",
+        "label": "Submit",
+        "key": "submit",
+        "disableOnInvalid": true,
+        "input": true,
+        "tableView": false
+      }
+    ]
+  }
+}
