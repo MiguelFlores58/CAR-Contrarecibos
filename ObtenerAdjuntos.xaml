@@ -245,7 +245,7 @@
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ObtenerAdjuntos" sap:VirtualizedContainerService.HintSize="1278,1942" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ObtenerAdjuntos" sap:VirtualizedContainerService.HintSize="1278,2621" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="nombreBase" />
       <Variable x:TypeArguments="x:String" Default="c:\CARPIN" Name="rutaDescarga" />
@@ -260,13 +260,16 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="592,1919" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="628,2598" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Int32" Name="intIndice" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetIMAPMailMessages ClientName="{x:Null}" ClientVersion="{x:Null}" FilterExpression="{x:Null}" FilterExpressionCharacterSet="{x:Null}" SecurePassword="{x:Null}" ConnectionMode="LegacyConfiguration" DeleteMessages="True" DisplayName="Recuperar mensajes de correo electrónico mediante el protocolo IMAP." Email="robot@carpin.mx" EnableSSL="True" sap:VirtualizedContainerService.HintSize="558,175" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_3" IgnoreCRL="False" MailFolder="Inbox" MarkAsRead="False" Messages="[ListaMensajes]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Password="CarpinDic2025!" Port="993" SecureConnection="SslOnConnect" Server="secure.emailsrvr.com" TimeoutMS="90000" Top="30" UseISConnection="False" UseOAuth="False">
+      <ui:GetIMAPMailMessages ClientName="{x:Null}" ClientVersion="{x:Null}" FilterExpression="{x:Null}" FilterExpressionCharacterSet="{x:Null}" SecurePassword="{x:Null}" ConnectionMode="LegacyConfiguration" DeleteMessages="True" DisplayName="Recuperar mensajes de correo electrónico mediante el protocolo IMAP." Email="robot@carpin.mx" EnableSSL="True" sap:VirtualizedContainerService.HintSize="594,175" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_3" IgnoreCRL="False" MailFolder="Inbox" MarkAsRead="False" Messages="[ListaMensajes]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Password="CarpinDic2025!" Port="993" SecureConnection="SslOnConnect" Server="secure.emailsrvr.com" TimeoutMS="90000" Top="30" UseISConnection="False" UseOAuth="False">
         <ui:GetIMAPMailMessages.ConnectionDetailsBackupSlot>
           <usau:BackupSlot x:TypeArguments="umae:ConnectionDetails" StoredValue="LegacyConfiguration">
             <usau:BackupSlot.BackupValues>
@@ -277,14 +280,14 @@
           </usau:BackupSlot>
         </ui:GetIMAPMailMessages.ConnectionDetailsBackupSlot>
       </ui:GetIMAPMailMessages>
-      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="558,123" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[String.Join(&quot;, &quot;, ListaMensajes.Select(Function(m) m.Subject))]" />
-      <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each currentMailMessage" sap:VirtualizedContainerService.HintSize="558,1538" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ListaMensajes]">
+      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="594,123" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[String.Join(&quot;, &quot;, ListaMensajes.Select(Function(m) m.Subject))]" />
+      <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each currentMailMessage" sap:VirtualizedContainerService.HintSize="594,2217" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ListaMensajes]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="snm:MailMessage">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="currentMailMessage" />
             </ActivityAction.Argument>
-            <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Body" sap:VirtualizedContainerService.HintSize="556,1416" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,2095" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
                 <Variable x:TypeArguments="scg:IEnumerable(upr:ILocalResource)" Name="recursosAdjuntos" />
               </Sequence.Variables>
@@ -294,15 +297,15 @@
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:IfElseIfV2 Condition="[System.Text.RegularExpressions.Regex.IsMatch(currentMailMessage.Subject, &quot;Requerimiento\s+de\s+Pago\s+de\s+Estimaciones\s+y\s+Pr[eé]stamos&quot;, System.Text.RegularExpressions.RegexOptions.IgnoreCase)]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="522,1321" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+              <ui:IfElseIfV2 Condition="[System.Text.RegularExpressions.Regex.IsMatch(currentMailMessage.Subject, &quot;Requerimiento\s+de\s+Pago\s+de\s+Estimaciones\s+y\s+Pr[eé]stamos&quot;, System.Text.RegularExpressions.RegexOptions.IgnoreCase)]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="558,2000" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
                 <ui:IfElseIfV2.Else>
-                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="520,697" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="556,1376" sap2010:WorkflowViewState.IdRef="Sequence_9">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="486,179" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign sap:VirtualizedContainerService.HintSize="522,179" sap2010:WorkflowViewState.IdRef="Assign_1">
                       <Assign.To>
                         <OutArgument x:TypeArguments="str:MatchCollection">[mcCoincidencias]</OutArgument>
                       </Assign.To>
@@ -310,15 +313,15 @@
                         <InArgument x:TypeArguments="str:MatchCollection">[System.Text.RegularExpressions.Regex.Matches(currentMailMessage.Subject, "\d+[-/]\d+")]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <If Condition="[mcCoincidencias.count = 1]" sap:VirtualizedContainerService.HintSize="486,454" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[mcCoincidencias.count = 1]" sap:VirtualizedContainerService.HintSize="522,1133" sap2010:WorkflowViewState.IdRef="If_1">
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484,295" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="520,974" sap2010:WorkflowViewState.IdRef="Sequence_13">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="450,179" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign sap:VirtualizedContainerService.HintSize="486,179" sap2010:WorkflowViewState.IdRef="Assign_2">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[strCCO_OC]</OutArgument>
                             </Assign.To>
@@ -326,15 +329,15 @@
                               <InArgument x:TypeArguments="x:String">[mcCoincidencias(0).Value.Trim]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Sequence DisplayName="Descarga CFDIs" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <Sequence DisplayName="Descarga CFDIs" sap:VirtualizedContainerService.HintSize="486,731" sap2010:WorkflowViewState.IdRef="Sequence_7">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:SaveMailAttachments Attachments="[adjuntosGuardados]" DisplayName="Guarda los archivos adjuntos del mensaje de correo electrónico actual en la carpeta especificada por 'rutaDescarga'." ExcludeInlineAttachments="False" FolderPath="[rutaDescarga]" sap:VirtualizedContainerService.HintSize="452,227" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[currentMailMessage]" OverwriteExisting="True" ResourceAttachments="[recursosAdjuntos]" />
-                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="452,405" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[adjuntosGuardados]">
+                            <ui:SaveMailAttachments Attachments="[adjuntosGuardados]" DisplayName="Guarda los archivos adjuntos del mensaje de correo electrónico actual en la carpeta especificada por 'rutaDescarga'." ExcludeInlineAttachments="False" FolderPath="[rutaDescarga]" sap:VirtualizedContainerService.HintSize="452,231" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[currentMailMessage]" OverwriteExisting="True" ResourceAttachments="[recursosAdjuntos]" />
+                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[intIndice]" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="452,409" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[adjuntosGuardados]">
                               <ui:ForEach.Body>
                                 <ActivityAction x:TypeArguments="x:String">
                                   <ActivityAction.Argument>
@@ -347,7 +350,7 @@
                                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[Path.Combine(rutaDescarga.ToString.Trim, strCCO_OC.Tostring.Trim+ Path.GetExtension(currentText))]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[currentText]" />
+                                    <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[System.IO.Path.Combine(rutaDescarga.ToString().Trim(), strCCO_OC.ToString().Trim() + &quot;_&quot; + CStr(intIndice + 1) + System.IO.Path.GetExtension(currentText))]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[currentText]" />
                                   </Sequence>
                                 </ActivityAction>
                               </ui:ForEach.Body>
@@ -356,7 +359,7 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="484,25" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="520,25" sap2010:WorkflowViewState.IdRef="Sequence_14">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -372,14 +375,14 @@
                   <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
                 </ui:IfElseIfV2.ElseIfs>
                 <ui:IfElseIfV2.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="520,438" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="556,438" sap2010:WorkflowViewState.IdRef="Sequence_8">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Descarga Archivo Excel" sap:VirtualizedContainerService.HintSize="486,374" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <Sequence DisplayName="Descarga Archivo Excel" sap:VirtualizedContainerService.HintSize="522,374" sap2010:WorkflowViewState.IdRef="Sequence_11">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
