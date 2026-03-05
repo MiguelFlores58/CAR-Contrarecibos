@@ -320,7 +320,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:CommentOut>
             </Sequence>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ObtenerAdjuntos - Invoke Workflow File (ObtenerAdjuntos.xaml)" sap:VirtualizedContainerService.HintSize="1194,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ObtenerAdjuntos.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ObtenerAdjuntos - Invoke Workflow File (ObtenerAdjuntos.xaml)" sap:VirtualizedContainerService.HintSize="1194,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="ObtenerAdjuntos.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <scg:Dictionary x:TypeArguments="x:String, Argument" />
               </ui:InvokeWorkflowFile.Arguments>
