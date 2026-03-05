@@ -152,6 +152,7 @@
       <Variable x:TypeArguments="x:String" Name="strTipoCCO" />
       <Variable x:TypeArguments="x:String" Name="strArchivoDispatcher" />
       <Variable x:TypeArguments="x:String" Name="vNombrePrimerHoja" />
+      <Variable x:TypeArguments="x:String" Name="strPathArchivoExcel" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -160,7 +161,6 @@
     </sap:WorkflowViewStateService.ViewState>
     <Sequence DisplayName="Generar y conciliar Requisicion de pagos a subcontratistas" sap:VirtualizedContainerService.HintSize="1264,36401" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
-        <Variable x:TypeArguments="x:String" Name="strPathArchivoExcel" />
         <Variable x:TypeArguments="x:String" Name="strImporteFondo" />
         <Variable x:TypeArguments="sxl:XNamespace" Name="vTFD_NS" />
         <Variable x:TypeArguments="x:String" Name="vRetenciones" />
@@ -215,7 +215,7 @@
               <ui:BuildDataTable DataTable="[dtContable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="416,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;TipoMov&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;CuentaContable&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Descripcion&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
               <ui:BuildDataTable DataTable="[dtRESICO]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="416,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_5" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;TipoMov&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;CuentaContable&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
               <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dtCentroCostos]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="416,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="CentroCostos" WorkbookPath="[Path.Combine(Environment.CurrentDirectory, &quot;Dependencies&quot;, &quot;Config.xlsx&quot;)]" />
-              <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dtContable]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="416,120" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Contable" WorkbookPath="[Path.Combine(Environment.CurrentDirectory, &quot;Dependencies&quot;, &quot;Config.xlsx&quot;)]" />
+              <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dtContable]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="416,120" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Contabilidad" WorkbookPath="[Path.Combine(Environment.CurrentDirectory, &quot;Dependencies&quot;, &quot;Config.xlsx&quot;)]" />
               <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dtRESICO]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="416,120" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="RESICO" WorkbookPath="[Path.Combine(Environment.CurrentDirectory, &quot;Dependencies&quot;, &quot;Config.xlsx&quot;)]" />
               <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                 <ui:CommentOut.Body>
@@ -361,14 +361,10 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim wb As New ClosedXML.Excel.XLWorkbook(rutaExcel)&#xD;&#xA;nombreHoja = wb.Worksheet(1).Name" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="416,197" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+                    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim wb As New ClosedXML.Excel.XLWorkbook(in_RutaExcel)&#xA;out_NombreHoja = wb.Worksheet(1).Name" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="416,197" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
                       <ui:InvokeCode.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="inRutaExcel">
-                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strPathArchivoExcel" />
-                        </InArgument>
-                        <OutArgument x:TypeArguments="x:String" x:Key="outNombreHoja">
-                          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="vNombrePrimerHoja" />
-                        </OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_RutaExcel">[strPathArchivoExcel]</InArgument>
+                        <OutArgument x:TypeArguments="x:String" x:Key="out_NombreHoja">[vNombrePrimerHoja]</OutArgument>
                       </ui:InvokeCode.Arguments>
                     </ui:InvokeCode>
                     <ui:ReadRange WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dtReqPagos]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="416,120" sap2010:WorkflowViewState.IdRef="ReadRange_4" Range="B9" SheetName="[vNombrePrimerHoja.Trim()]" WorkbookPath="[strPathArchivoExcel]" />
@@ -471,7 +467,7 @@
                         <OutArgument x:TypeArguments="sd:DataTable">[dtReqPagos]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
-                        <InArgument x:TypeArguments="sd:DataTable">[dtTemporal.AsEnumerable().Where(Function(row) Not String.IsNullOrWhiteSpace(row("TIPO DE CONTRATO").ToString)).CopyToDataTable()]</InArgument>
+                        <InArgument x:TypeArguments="sd:DataTable">[dtReqPagos.AsEnumerable().Where(Function(row) Not String.IsNullOrWhiteSpace(row("TIPO DE CONTRATO").ToString)).CopyToDataTable()]</InArgument>
                       </Assign.Value>
                     </Assign>
                     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_3">
