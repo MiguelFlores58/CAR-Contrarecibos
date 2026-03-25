@@ -142,7 +142,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Dispatcher" sap:VirtualizedContainerService.HintSize="1264,41452" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Dispatcher" sap:VirtualizedContainerService.HintSize="1264,41372" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtReqPagos" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtOrdenCompra" />
@@ -159,7 +159,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Generar y conciliar Requisicion de pagos a subcontratistas" sap:VirtualizedContainerService.HintSize="1264,41429" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Generar y conciliar Requisicion de pagos a subcontratistas" sap:VirtualizedContainerService.HintSize="1264,41349" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strImporteFondo" />
         <Variable x:TypeArguments="sxl:XNamespace" Name="vTFD_NS" />
@@ -191,7 +191,7 @@
           <OutArgument x:TypeArguments="x:String" x:Key="out_strRutaExcel">[strPathArchivoExcel]</OutArgument>
         </ui:InvokeCode.Arguments>
       </ui:InvokeCode>
-      <If Condition="[strPathArchivoExcel = &quot;&quot;]" sap:VirtualizedContainerService.HintSize="1230,40952" sap2010:WorkflowViewState.IdRef="If_37">
+      <If Condition="[strPathArchivoExcel = &quot;&quot;]" sap:VirtualizedContainerService.HintSize="1230,40872" sap2010:WorkflowViewState.IdRef="If_37">
         <If.Then>
           <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1228,349" sap2010:WorkflowViewState.IdRef="Sequence_166">
             <sap:WorkflowViewStateService.ViewState>
@@ -204,7 +204,7 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="1228,40473" sap2010:WorkflowViewState.IdRef="Sequence_167">
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="1228,40393" sap2010:WorkflowViewState.IdRef="Sequence_167">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -443,7 +443,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <Sequence DisplayName="Imprimir OC - Complementar dtReqPagos" sap:VirtualizedContainerService.HintSize="1194,33015" sap2010:WorkflowViewState.IdRef="Sequence_17">
+            <Sequence DisplayName="Imprimir OC - Complementar dtReqPagos" sap:VirtualizedContainerService.HintSize="1194,32935" sap2010:WorkflowViewState.IdRef="Sequence_17">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="vRFC_Emisor" />
                 <Variable x:TypeArguments="x:String" Name="vMetodoPago" />
@@ -456,39 +456,39 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: carpinserver.sytes.net:389 - Conexión a Escritorio remoto" sap:VirtualizedContainerService.HintSize="1160,32923" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" ScopeGuid="63dc4581-98fa-4ae5-9dae-307bc4c12f4e" Timeout="60" Version="V2">
+              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Session - 35.239.213.26 - Conexión a Escritorio remoto" sap:VirtualizedContainerService.HintSize="1160,32843" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" ScopeGuid="63dc4581-98fa-4ae5-9dae-307bc4c12f4e" Timeout="60" Version="V2">
                 <uix:NApplicationCard.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1126,32607" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1126,32527" sap2010:WorkflowViewState.IdRef="Sequence_18">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: compras.exe" sap:VirtualizedContainerService.HintSize="1092,2360" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" ScopeGuid="3aeab4ad-c7ab-45af-881f-056c073eb65c" Timeout="60" Version="V2">
+                      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: compras.exe" sap:VirtualizedContainerService.HintSize="1092,2320" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" ScopeGuid="3aeab4ad-c7ab-45af-881f-056c073eb65c" Timeout="60" Version="V2">
                         <uix:NApplicationCard.Body>
                           <ActivityAction x:TypeArguments="x:Object">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="502,2035" sap2010:WorkflowViewState.IdRef="Sequence_126">
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="502,1995" sap2010:WorkflowViewState.IdRef="Sequence_126">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="468,1973" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                              <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="468,1933" sap2010:WorkflowViewState.IdRef="Sequence_21">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="d053a47b-a2f5-4adc-816e-b902ad8336db" DisplayName="CV Screen Scope 'pbdw115'" sap:VirtualizedContainerService.HintSize="434,1886" sap2010:WorkflowViewState.IdRef="CVScope_7" SendOnPremData="False" Version="V6">
+                                <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="d053a47b-a2f5-4adc-816e-b902ad8336db" DisplayName="CV Screen Scope 'pbdw115'" sap:VirtualizedContainerService.HintSize="434,1846" sap2010:WorkflowViewState.IdRef="CVScope_7" SendOnPremData="False" Version="V6">
                                   <p:CVScope.Body>
                                     <ActivityAction x:TypeArguments="x:Object">
                                       <ActivityAction.Argument>
@@ -727,7 +727,7 @@
                           </ActivityAction>
                         </uix:NApplicationCard.Body>
                         <uix:NApplicationCard.TargetApp>
-                          <uix:TargetApp Area="2601, 393, 558, 294" FilePath="C:\EnkontrolV9\Aplicaciones_V9\Compras\compras.exe" IconBase64="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" InformativeScreenshot="144000a85c342a1caa060b408da19247.png" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='carpinserver.sytes.net:389 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='FNWNS*' idx='*' /&gt;" />
+                          <uix:TargetApp Area="2601, 393, 558, 294" FilePath="C:\EnkontrolV9\Aplicaciones_V9\Compras\compras.exe" IconBase64="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" InformativeScreenshot="cc830cb2354d3e38f348cee5433d5a3d.png" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='FNWNS*' idx='*' /&gt;" />
                         </uix:NApplicationCard.TargetApp>
                       </uix:NApplicationCard>
                       <Sequence DisplayName="Elegir menu impresion orden de compra" sap:VirtualizedContainerService.HintSize="1092,1505" sap2010:WorkflowViewState.IdRef="Sequence_52">
@@ -737,7 +737,7 @@
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Sistema Integral de Ordenes de Compra                                          D" sap:VirtualizedContainerService.HintSize="502,1411" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" ScopeGuid="0cc8b337-e7c0-489b-908d-e9703d6a2928" Timeout="60" Version="V2">
+                        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Sistema Integral de Ordenes de Compra                                          D" sap:VirtualizedContainerService.HintSize="592,1411" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" ScopeGuid="0cc8b337-e7c0-489b-908d-e9703d6a2928" Timeout="60" Version="V2">
                           <uix:NApplicationCard.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
@@ -1135,13 +1135,13 @@
                           </uix:NApplicationCard.TargetApp>
                         </uix:NApplicationCard>
                       </Sequence>
-                      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Remote Desktop: Reporte de Ordenes de Compra [W_SOC450]" sap:VirtualizedContainerService.HintSize="1092,28680" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" ScopeGuid="c3defe0d-d159-4c59-8d41-b9908d0efb5d" Timeout="60" Version="V2">
+                      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Remote Desktop: Reporte de Ordenes de Compra [W_SOC450]" sap:VirtualizedContainerService.HintSize="1092,28640" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" ScopeGuid="c3defe0d-d159-4c59-8d41-b9908d0efb5d" Timeout="60" Version="V2">
                         <uix:NApplicationCard.Body>
                           <ActivityAction x:TypeArguments="x:Object">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1058,28362" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1058,28322" sap2010:WorkflowViewState.IdRef="Sequence_25">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1155,13 +1155,13 @@
                                   <InArgument x:TypeArguments="x:String">["0"]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtReqPagos]" DisplayName="For Each Row in Data Table dtReqPagos" sap:VirtualizedContainerService.HintSize="1024,27809" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtReqPagos]" DisplayName="For Each Row in Data Table dtReqPagos" sap:VirtualizedContainerService.HintSize="1024,27769" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                                 <ui:ForEachRow.Body>
                                   <ActivityAction x:TypeArguments="sd:DataRow">
                                     <ActivityAction.Argument>
                                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRowReqPagos" />
                                     </ActivityAction.Argument>
-                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1022,27627" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1022,27587" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="x:String" Name="strCCO" />
                                         <Variable x:TypeArguments="x:String" Name="strOC" />
@@ -1363,7 +1363,7 @@
                                           </Sequence>
                                         </If.Else>
                                       </If>
-                                      <Sequence DisplayName="Ingresar CCO y OC" sap:VirtualizedContainerService.HintSize="988,11230" sap2010:WorkflowViewState.IdRef="Sequence_88">
+                                      <Sequence DisplayName="Ingresar CCO y OC" sap:VirtualizedContainerService.HintSize="988,11190" sap2010:WorkflowViewState.IdRef="Sequence_88">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2249,7 +2249,7 @@
                                             <uix:TargetAnchorable DesignTimeRectangle="3, 26, 480, 133" DesignTimeScaleFactor="1" FriendlyName="'Aviso'" FullSelectorArgument="&lt;ctrl name='Aviso' role='dialog' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Aviso' role='dialog' automationid='' check:text='Aviso' /&gt;" Guid="9df67e05-f385-4f70-b28a-0bcb2f9e7040" InformativeScreenshot="b9bf142c86e4d82043c9399587bb603f.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='carpinserver.sytes.net:389 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='#32770' title='Aviso' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
                                           </uix:NCheckState.Target>
                                         </uix:NCheckState>
-                                        <Sequence DisplayName="Leer Pantalla Impresion" sap:VirtualizedContainerService.HintSize="954,6907" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                        <Sequence DisplayName="Leer Pantalla Impresion" sap:VirtualizedContainerService.HintSize="954,6867" sap2010:WorkflowViewState.IdRef="Sequence_27">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -3647,7 +3647,7 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </p:CVScope>
-                                          <p:CVScope ContinueOnError="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DelayBefore="2" DesignTimeCacheId="b748cb41-43f5-4a54-9431-10de20605b6c" DisplayName="Salir Impresion" sap:VirtualizedContainerService.HintSize="558,858" sap2010:WorkflowViewState.IdRef="CVScope_5" SendOnPremData="False" Version="V6">
+                                          <p:CVScope ContinueOnError="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DelayBefore="2" DesignTimeCacheId="b748cb41-43f5-4a54-9431-10de20605b6c" DisplayName="Salir Impresion" sap:VirtualizedContainerService.HintSize="558,818" sap2010:WorkflowViewState.IdRef="CVScope_5" SendOnPremData="False" Version="V6">
                                             <p:CVScope.Body>
                                               <ActivityAction x:TypeArguments="x:Object">
                                                 <ActivityAction.Argument>
@@ -4452,7 +4452,7 @@
                                                       </ui:CursorPosition>
                                                     </ui:Click.CursorPosition>
                                                     <ui:Click.Target>
-                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="abf18fa6-bd45-4dd0-887f-e66da16a91a2" InformativeScreenshot="d832716abecc01a993d6731d765d04e3" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='carpinserver.sytes.net:389 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='FNWND*' title='Sistema Integral de Ordenes de Compra                           *' /&gt;&lt;ctrl automationid='MenuBar' name='Aplicación' role='menu bar' /&gt;&lt;ctrl name='Restaurar' role='push button' /&gt;">
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="abf18fa6-bd45-4dd0-887f-e66da16a91a2" InformativeScreenshot="d832716abecc01a993d6731d765d04e3" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='FNWND*' title='Sistema Integral de Ordenes de Compra                           *' /&gt;&lt;ctrl automationid='MenuBar' name='Aplicación' role='menu bar' /&gt;&lt;ctrl name='Restaurar' role='push button' /&gt;">
                                                         <ui:Target.TimeoutMS>
                                                           <InArgument x:TypeArguments="x:Int32" />
                                                         </ui:Target.TimeoutMS>
@@ -5291,7 +5291,7 @@
                   </ActivityAction>
                 </uix:NApplicationCard.Body>
                 <uix:NApplicationCard.TargetApp>
-                  <uix:TargetApp Area="1920, 0, 1920, 1080" FilePath="C:\Windows\System32\mstsc.exe" IconBase64="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" InformativeScreenshot="3f17eafa908d03d69a4e3a8ed7cb9a19.png" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='carpinserver.sytes.net:389 - Conexión a Escritorio remoto' /&gt;" Title="Program Manager" />
+                  <uix:TargetApp Area="1920, 0, 1920, 1080" FilePath="C:\Windows\System32\mstsc.exe" IconBase64="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" InformativeScreenshot="2658fce0fee5d5f3f80364bc343af9b6.png" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;" Title="Program Manager" />
                 </uix:NApplicationCard.TargetApp>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
