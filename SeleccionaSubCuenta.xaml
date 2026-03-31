@@ -102,7 +102,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SeleccionaSubCuenta" sap:VirtualizedContainerService.HintSize="1174,1173" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SeleccionaSubCuenta" sap:VirtualizedContainerService.HintSize="1150,1173" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -132,7 +132,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayMS="2000" Descriptor="[&quot;Target: InputBox (9,19,113,19)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Formato de Cuenta' (20,46,92,11)&quot;]" DesignTimeCacheId="77a47abf-4041-4522-a314-98dfc8320203" DesignTimeScaleFactor="1" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,219" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_1" InformativeScreenshot="3b368aa0a8cdd041202bc4fee08428fc" NumberOfScrolls="2" ScrollDirection="None" Text="[in_CuentaContable]" Version="V6">
+                    <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayMS="2000" Descriptor="[&quot;Target: InputBox (9,19,113,19)&quot; +&#xA;&quot;Anchor: Text 'Formato de Cuenta' (20,46,92,11)&quot;]" DesignTimeCacheId="77a47abf-4041-4522-a314-98dfc8320203" DesignTimeScaleFactor="1" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,219" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_1" InformativeScreenshot="3b368aa0a8cdd041202bc4fee08428fc" NumberOfScrolls="2" ScrollDirection="None" Text="[in_CuentaContable]" Version="V6">
                       <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
                         <uc:CvDescriptor Id="f93bebb2-2cb7-4c0f-a50f-ca8740230a84">
                           <uc:CvDescriptor.Anchors>
@@ -156,7 +156,7 @@
                         </ui:Target>
                       </p:CvTypeIntoWithDescriptor.Target>
                     </p:CvTypeIntoWithDescriptor>
-                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1000" Descriptor="[&quot;Target: Button (441,30,104,23)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Copiar' (477,36,33,13)&quot;]" DesignTimeCacheId="77a47abf-4041-4522-a314-98dfc8320203" DesignTimeScaleFactor="1" DisplayName="CV Click - Button" sap:VirtualizedContainerService.HintSize="400,210" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InformativeScreenshot="a19f1a2d49dd1e24d77cf7e5600800d9" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1000" Descriptor="[&quot;Target: Button (441,30,104,23)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Copiar' (477,36,33,13)&quot;]" DesignTimeCacheId="77a47abf-4041-4522-a314-98dfc8320203" DesignTimeScaleFactor="1" DisplayName="CV Click - Button" sap:VirtualizedContainerService.HintSize="400,210" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InformativeScreenshot="b674c98f68668d18ae99a5bfa6558eb8" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
                       <p:CvClickWithDescriptor.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -193,6 +193,9 @@
                   </Sequence>
                 </ActivityAction>
               </p:CVScope.Body>
+              <p:CVScope.DesignTimeCache>
+                <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+              </p:CVScope.DesignTimeCache>
               <p:CVScope.DesignTimeCacheContainer>
                 <uc:CvCacheContainer>
                   <uc:CvCacheContainer.Caches>
