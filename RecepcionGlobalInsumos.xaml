@@ -105,46 +105,46 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="RecepcionGlobalInsumos" sap:VirtualizedContainerService.HintSize="1125,2789" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="RecepcionGlobalInsumos" sap:VirtualizedContainerService.HintSize="1125,2912" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Sistema Integral de Ordenes de Compra                                          D" sap:VirtualizedContainerService.HintSize="592,2766" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="59f20fe4-6c5a-41c7-9fdc-8127a05e509f" Timeout="60" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Sistema Integral de Ordenes de Compra                                          D" sap:VirtualizedContainerService.HintSize="660,2889" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="59f20fe4-6c5a-41c7-9fdc-8127a05e509f" Timeout="60" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="558,2450" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="626,2573" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click en Procesos diarios" sap:VirtualizedContainerService.HintSize="484,190" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="59f20fe4-6c5a-41c7-9fdc-8127a05e509f" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click en Procesos diarios" sap:VirtualizedContainerService.HintSize="592,190" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="59f20fe4-6c5a-41c7-9fdc-8127a05e509f" Version="V3">
               <uix:NClick.Target>
-                <uix:TargetAnchorable CvElementArea="60, 22, 80, 21" CvTextArea="66, 25, 69, 14" CvTextArgument="Presupuesto" CvType="Button" DesignTimeRectangle="70, 31, 78, 19" DesignTimeScaleFactor="1" FriendlyName="'menu item'" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Aplicación' role='menu bar' /&gt;&lt;ctrl idx='2' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='MenuBar' name='Aplicación' role='menu bar' /&gt;&lt;ctrl automationid='' role='menu item' /&gt;" Guid="24aea58b-d6b3-4c4c-b43f-9a5d899703cc" InformativeScreenshot="542abd92ccf677874c241867881ff9f6.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='FNWND*' title='Sistema Integral de Ordenes de Compra                           *' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                <uix:TargetAnchorable CvTextArea="148, 24, 82, 14" CvTextArgument="Procesos Diarios" CvType="Text" DesignTimeRectangle="148, 31, 98, 19" DesignTimeScaleFactor="1" FriendlyName="'menu item'" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Aplicación' role='menu bar' /&gt;&lt;ctrl idx='3' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='MenuBar' name='Aplicación' role='menu bar' /&gt;&lt;ctrl automationid='' role='menu item' /&gt;" Guid="25729c7f-dc75-49e8-ab3a-2ae1f2cc6223" InformativeScreenshot="d94196e8b93483d36eda8c873a119fab.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='FNWND*' title='Sistema Integral de Ordenes de Compra                           *' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Mov no inventariables" sap:VirtualizedContainerService.HintSize="484,190" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="59f20fe4-6c5a-41c7-9fdc-8127a05e509f" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Mov no inventariables" sap:VirtualizedContainerService.HintSize="592,190" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="59f20fe4-6c5a-41c7-9fdc-8127a05e509f" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable CvTextArea="56, 270, 152, 13" CvTextArgument="Movimentos No Inventariables" CvType="Text" DesignTimeRectangle="3, 267, 274, 24" DesignTimeScaleFactor="1" FriendlyName="'menu item'" FullSelectorArgument="&lt;ctrl idx='12' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='' role='menu item' /&gt;" Guid="c7260e1a-c544-4933-ab15-258b2de662f7" InformativeScreenshot="3c0d5ecfde6d4c43113b689f22f8f559.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='#32768' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Recepcion Global de insumos" sap:VirtualizedContainerService.HintSize="484,190" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="59f20fe4-6c5a-41c7-9fdc-8127a05e509f" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Recepcion Global de insumos" sap:VirtualizedContainerService.HintSize="592,190" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="59f20fe4-6c5a-41c7-9fdc-8127a05e509f" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable CvTextArea="57, 55, 128, 14" CvTextArgument="Recepcion Global Insumes" CvType="Text" DesignTimeRectangle="3, 51, 218, 24" DesignTimeScaleFactor="1" FriendlyName="'menu item 10133'" FullSelectorArgument="&lt;ctrl automationid='10133' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='10133' role='menu item' /&gt;" Guid="14f8172d-9c77-4fe5-b9a4-f0340136dbb9" InformativeScreenshot="5f681d0e551d677a632734de4249a368.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='#32768' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Sistema Integral de Ordenes de Compra                                          D" sap:VirtualizedContainerService.HintSize="484,1818" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Timeout="60" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Sistema Integral de Ordenes de Compra                                          D" sap:VirtualizedContainerService.HintSize="592,1941" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Timeout="60" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1500" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="558,1623" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -205,17 +205,18 @@
                         </uix:TargetAnchorable>
                       </uix:NTypeInto.Target>
                     </uix:NTypeInto>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'menu item'" sap:VirtualizedContainerService.HintSize="416,183" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Version="V3">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'menu item'" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable DesignTimeRectangle="229, 53, 23, 23" DesignTimeScaleFactor="1" FriendlyName="'compras.exe Sistema'" Guid="2a7410ff-78a9-45c3-92b2-9647a5a846a1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB5SURBVEhL7dTBCcAgEETRKcqm7Ci5WUTSR+zEDiaMEkPAS8A5BLLwTsLHw7IopfBC4IlkSqm/vwVXWMbxCWGpcUdY4ArLHZ8clhY3hKXGHWGp37bFXWHpe+7wx4c+HNcquiDGSBeEEOjSrpZpsGwHXbBumS5Y90yXE+yjGGfmnK1gAAAAAElFTkSuQmCC" InformativeScreenshot="b76b163a17098978ee962e19c8887126.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='FNWND*' title='Sistema Integral de Ordenes de Compra                           *' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                               <uix:Target CvTextArea="206, 26, 80, 12" CvTextArgument="Procesos Diarios" CvType="Text" DesignTimeRectangle="205, 31, 98, 19" FriendlyName="'menu item'" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Aplicación' role='menu bar' /&gt;&lt;ctrl idx='4' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='MenuBar' name='Aplicación' role='menu bar' /&gt;&lt;ctrl automationid='' role='menu item' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>
                         </uix:TargetAnchorable>
                       </uix:NClick.Target>
                     </uix:NClick>
+                    <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="416,116" sap2010:WorkflowViewState.IdRef="Delay_1" />
                   </Sequence>
                 </ActivityAction>
               </uix:NApplicationCard.Body>
