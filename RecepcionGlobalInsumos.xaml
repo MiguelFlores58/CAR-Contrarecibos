@@ -118,6 +118,7 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -125,52 +126,374 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="RecepcionGlobalInsumos" sap:VirtualizedContainerService.HintSize="1090,7763" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="RecepcionGlobalInsumos" sap:VirtualizedContainerService.HintSize="1090,8468" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd2:DataTable" Name="dtInsumos" />
       <Variable x:TypeArguments="x:Int32" Name="vIndice" />
-      <Variable x:TypeArguments="x:Int32" Name="vFila" />
       <Variable x:TypeArguments="x:Double" Name="vImporte" />
+      <Variable x:TypeArguments="x:Boolean" Name="bolGuardar" />
+      <Variable x:TypeArguments="x:Int32" Name="pixelOffset" />
+      <Variable x:TypeArguments="x:Boolean" Name="bolNoHayElementos" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Sistema Integral de Ordenes de Compra                                          D" sap:VirtualizedContainerService.HintSize="1090,7740" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="59f20fe4-6c5a-41c7-9fdc-8127a05e509f" Timeout="60" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Sistema Integral de Ordenes de Compra                                          D" sap:VirtualizedContainerService.HintSize="1090,8445" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="59f20fe4-6c5a-41c7-9fdc-8127a05e509f" Timeout="60" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1056,7424" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1056,8129" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click en Procesos diarios" sap:VirtualizedContainerService.HintSize="1022,190" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="59f20fe4-6c5a-41c7-9fdc-8127a05e509f" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable CvTextArea="148, 24, 82, 14" CvTextArgument="Procesos Diarios" CvType="Text" DesignTimeRectangle="148, 31, 98, 19" DesignTimeScaleFactor="1" FriendlyName="'menu item'" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Aplicación' role='menu bar' /&gt;&lt;ctrl idx='3' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='MenuBar' name='Aplicación' role='menu bar' /&gt;&lt;ctrl automationid='' role='menu item' /&gt;" Guid="25729c7f-dc75-49e8-ab3a-2ae1f2cc6223" InformativeScreenshot="d94196e8b93483d36eda8c873a119fab.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='FNWND*' title='Sistema Integral de Ordenes de Compra                           *' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="0.5" DisplayName="Click Mov no inventariables" sap:VirtualizedContainerService.HintSize="1022,190" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="59f20fe4-6c5a-41c7-9fdc-8127a05e509f" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable CvTextArea="56, 270, 152, 13" CvTextArgument="Movimentos No Inventariables" CvType="Text" DesignTimeRectangle="3, 267, 274, 24" DesignTimeScaleFactor="1" FriendlyName="'menu item'" FullSelectorArgument="&lt;ctrl idx='12' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='' role='menu item' /&gt;" Guid="c7260e1a-c544-4933-ab15-258b2de662f7" InformativeScreenshot="3c0d5ecfde6d4c43113b689f22f8f559.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='#32768' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Recepcion Global de insumos" sap:VirtualizedContainerService.HintSize="1022,190" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="59f20fe4-6c5a-41c7-9fdc-8127a05e509f" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable CvTextArea="57, 55, 128, 14" CvTextArgument="Recepcion Global Insumes" CvType="Text" DesignTimeRectangle="3, 51, 218, 24" DesignTimeScaleFactor="1" FriendlyName="'menu item 10133'" FullSelectorArgument="&lt;ctrl automationid='10133' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='10133' role='menu item' /&gt;" Guid="14f8172d-9c77-4fe5-b9a4-f0340136dbb9" InformativeScreenshot="5f681d0e551d677a632734de4249a368.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='#32768' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Sistema Integral de Ordenes de Compra                                          D" sap:VirtualizedContainerService.HintSize="1022,6792" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Timeout="60" Version="V2">
+            <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="3336a711-ccb8-4c4b-906c-ecbdb60c1674" DisplayName="CV Screen Scope 'compras.exe Sistema'" sap:VirtualizedContainerService.HintSize="1022,1038" sap2010:WorkflowViewState.IdRef="CVScope_2" SendOnPremData="False" Version="V6">
+              <p:CVScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'Procesos Diarios' (148,25,81,13)&quot;]" DesignTimeCacheId="3336a711-ccb8-4c4b-906c-ecbdb60c1674" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="400,219" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InformativeScreenshot="86bf8289b46c3b1516cf5d9c747cbc3f" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
+                      <p:CvClickWithDescriptor.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </p:CvClickWithDescriptor.CursorPosition>
+                      <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                        <uc:CvDescriptor Id="66bb510d-3de1-4ef3-a5ed-1fae0db60e28">
+                          <uc:CvDescriptor.Target>
+                            <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="148, 25, 81, 13" ElementType="Text" Text="Procesos Diarios" />
+                          </uc:CvDescriptor.Target>
+                        </uc:CvDescriptor>
+                      </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                      <p:CvClickWithDescriptor.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f612ef04-4e04-40f9-bed9-69764b012309">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </p:CvClickWithDescriptor.Target>
+                    </p:CvClickWithDescriptor>
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'Movimientos No Inventariables' (196,312,152,14)&quot;]" DesignTimeCacheId="bf3c6a48-500c-4590-9d59-3c558711bd30" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="400,219" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="ea0b2a88f395701f5e60129ec8788f51" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
+                      <p:CvClickWithDescriptor.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </p:CvClickWithDescriptor.CursorPosition>
+                      <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                        <uc:CvDescriptor Id="75cf9323-917c-4d05-aac0-87a14b5c123f">
+                          <uc:CvDescriptor.Target>
+                            <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="196, 312, 152, 14" ElementType="Text" Text="Movimientos No Inventariables" />
+                          </uc:CvDescriptor.Target>
+                        </uc:CvDescriptor>
+                      </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                      <p:CvClickWithDescriptor.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f9951898-034d-495b-834c-34a4b5008a61">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </p:CvClickWithDescriptor.Target>
+                    </p:CvClickWithDescriptor>
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'Recepcion Global Insumos' (472,361,126,15)&quot;]" DesignTimeCacheId="bf3c6a48-500c-4590-9d59-3c558711bd30" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="400,210" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_3" InformativeScreenshot="b1c4c525e8013253d9e97dd1f01cb1a7" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
+                      <p:CvClickWithDescriptor.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </p:CvClickWithDescriptor.CursorPosition>
+                      <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                        <uc:CvDescriptor Id="aeead968-3ac7-4d5a-be98-a5872d5c5daf">
+                          <uc:CvDescriptor.Target>
+                            <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="472, 361, 126, 15" ElementType="Text" Text="Recepcion Global Insumos" />
+                          </uc:CvDescriptor.Target>
+                        </uc:CvDescriptor>
+                      </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                      <p:CvClickWithDescriptor.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="9b8467f5-308d-4a3b-ba53-b1f2d0bcd629">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </p:CvClickWithDescriptor.Target>
+                    </p:CvClickWithDescriptor>
+                  </Sequence>
+                </ActivityAction>
+              </p:CVScope.Body>
+              <p:CVScope.DesignTimeCache>
+                <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+              </p:CVScope.DesignTimeCache>
+              <p:CVScope.DesignTimeCacheContainer>
+                <uc:CvCacheContainer>
+                  <uc:CvCacheContainer.Caches>
+                    <scg:List x:TypeArguments="uc:CVCache" Capacity="2">
+                      <uc:CVCache DataSent="False" DisplayName="Screen CV Click - 'Procesos Di (Main)" Id="3336a711-ccb8-4c4b-906c-ecbdb60c1674" InformativeScreenshot="780acdf36a3c1bced1d1403254c2a254" LogicalPosition="1912, -8" OcrText="Sistema Integral de Ordenes de Compra PRUEBA - DESARROLLADORA CARPIN SA DE CV _ X Maestros Presupuesto Procesos Diarios Consultas Reportes Ayuda Ventana Salir" Position="1912, -8" ScreenshotGuid="73b165cf-eeb3-4431-bf4b-eb61b17c8b11" ServerVersion="0">
+                        <uc:CVCache.CvAnchorRelations>
+                          <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="0" />
+                        </uc:CVCache.CvAnchorRelations>
+                        <uc:CVCache.CvUiElements>
+                          <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="16">
+                            <uc:CvElementInfo Category="MaximizeButton" Region="1839, 0, 20, 20" />
+                            <uc:CvElementInfo Category="Icon" Region="18, 47, 21, 21" />
+                            <uc:CvElementInfo Category="MinimizeButton" Region="1793, 2, 21, 18" />
+                            <uc:CvElementInfo Category="Icon" Region="0, 0, 21, 19" />
+                            <uc:CvElementInfo Category="CloseButton" Region="1885, 1, 20, 19" />
+                            <uc:CvElementInfo Category="Icon" Region="40, 47, 21, 20" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="0, 62, 1920, 970" />
+                            <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="11, 43, 55, 27" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="0, 46, 11, 23" />
+                            <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="5, 23, 58, 18" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="1886, 1, 19, 19" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="2, 44, 65, 27" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="170, 1, 1713, 22" />
+                          </scg:List>
+                        </uc:CVCache.CvUiElements>
+                        <uc:CVCache.OcrTexts>
+                          <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="24">
+                            <uc:OcrTextInfo Region="21, 4, 44, 14" Text="Sistema" />
+                            <uc:OcrTextInfo Region="66, 4, 42, 16" Text="Integral" />
+                            <uc:OcrTextInfo Region="108, 4, 17, 14" Text="de" />
+                            <uc:OcrTextInfo Region="124, 5, 47, 13" Text="Ordenes" />
+                            <uc:OcrTextInfo Region="171, 5, 17, 13" Text="de" />
+                            <uc:OcrTextInfo Region="187, 5, 46, 15" Text="Compra" />
+                            <uc:OcrTextInfo Region="356, 4, 46, 14" Text="PRUEBA" />
+                            <uc:OcrTextInfo Region="402, 5, 7, 12" Text="-" />
+                            <uc:OcrTextInfo Region="410, 4, 107, 14" Text="DESARROLLADORA" />
+                            <uc:OcrTextInfo Region="516, 4, 45, 13" Text="CARPIN" />
+                            <uc:OcrTextInfo Region="561, 4, 17, 14" Text="SA" />
+                            <uc:OcrTextInfo Region="578, 5, 17, 13" Text="DE" />
+                            <uc:OcrTextInfo Region="595, 5, 19, 13" Text="CV" />
+                            <uc:OcrTextInfo Region="1796, 0, 15, 13" Text="_" />
+                            <uc:OcrTextInfo Region="1887, 2, 15, 14" Text="X" />
+                            <uc:OcrTextInfo Region="8, 26, 48, 12" Text="Maestros" />
+                            <uc:OcrTextInfo Region="71, 26, 62, 13" Text="Presupuesto" />
+                            <uc:OcrTextInfo Region="148, 25, 46, 13" Text="Procesos" />
+                            <uc:OcrTextInfo Region="195, 25, 34, 13" Text="Diarios" />
+                            <uc:OcrTextInfo Region="246, 25, 51, 13" Text="Consultas" />
+                            <uc:OcrTextInfo Region="312, 26, 47, 14" Text="Reportes" />
+                            <uc:OcrTextInfo Region="368, 25, 34, 14" Text="Ayuda" />
+                            <uc:OcrTextInfo Region="414, 26, 43, 12" Text="Ventana" />
+                            <uc:OcrTextInfo Region="472, 25, 22, 13" Text="Salir" />
+                          </scg:List>
+                        </uc:CVCache.OcrTexts>
+                      </uc:CVCache>
+                      <uc:CVCache DataSent="False" DisplayName="Screen CV Click - 'Movimientos" Id="bf3c6a48-500c-4590-9d59-3c558711bd30" InformativeScreenshot="4a116f7d19caf34a50399ba63ddcfdd1" LogicalPosition="1912, -8" OcrText="Sistema Integral de Ordenes de Compra PRUEBA - DESARROLLADORA CARPIN SA DE CV _ X Maestros Presupuesto Procesos Diarios Consultas Reportes Ayuda Ventana Salir Anticipos Requisiciones Cuadro Comparativo Generacion de o.C. Ordenes de Compra Autorizacion OC Ajustes/Cancelacion o.C. Ajustes OC - Tolerancia Entradas de Almacen I Traspasos a otro c.C. Insumos Recibidos por Orden Compra Movimientos No Inventariables Mtto. Remision Recepcion Insumos Recepcion Global Insumos Consulta Remision Rep. Remision" Position="1912, -8" ScreenshotGuid="4a8f3091-f875-40af-979a-5f51215a8b01" ServerVersion="0">
+                        <uc:CVCache.CvAnchorRelations>
+                          <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="0" />
+                        </uc:CVCache.CvAnchorRelations>
+                        <uc:CVCache.CvTables>
+                          <x:Array Type="uc:CvTableInfo">
+                            <uc:CvTableInfo>
+                              <uc:CvTableInfo.Columns>
+                                <x:Array Type="x:Int32">
+                                  <x:Int32>414</x:Int32>
+                                  <x:Int32>435</x:Int32>
+                                  <x:Int32>461</x:Int32>
+                                  <x:Int32>636</x:Int32>
+                                </x:Array>
+                              </uc:CvTableInfo.Columns>
+                              <uc:CvTableInfo.Rows>
+                                <x:Array Type="x:Int32">
+                                  <x:Int32>307</x:Int32>
+                                  <x:Int32>328</x:Int32>
+                                  <x:Int32>354</x:Int32>
+                                  <x:Int32>377</x:Int32>
+                                  <x:Int32>403</x:Int32>
+                                  <x:Int32>429</x:Int32>
+                                </x:Array>
+                              </uc:CvTableInfo.Rows>
+                            </uc:CvTableInfo>
+                          </x:Array>
+                        </uc:CVCache.CvTables>
+                        <uc:CVCache.CvUiElements>
+                          <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="64">
+                            <uc:CvElementInfo Category="MaximizeButton" Region="1839, 0, 20, 20" />
+                            <uc:CvElementInfo Category="Icon" Region="18, 47, 21, 21" />
+                            <uc:CvElementInfo Category="ArrowButton" Region="400, 47, 15, 17" />
+                            <uc:CvElementInfo Category="MinimizeButton" Region="1793, 2, 21, 18" />
+                            <uc:CvElementInfo Category="CloseButton" Region="1885, 0, 20, 19" />
+                            <uc:CvElementInfo Category="Icon" Region="0, 0, 21, 19" />
+                            <uc:CvElementInfo Category="Icon" Region="40, 47, 21, 21" />
+                            <uc:CvElementInfo Category="Button" Region="139, 22, 99, 21" />
+                            <uc:CvElementInfo Category="Cell" Region="414, 307, 21, 21" />
+                            <uc:CvElementInfo Category="Cell" Region="414, 328, 21, 26" />
+                            <uc:CvElementInfo Category="Cell" Region="414, 354, 21, 23" />
+                            <uc:CvElementInfo Category="Cell" Region="414, 377, 21, 26" />
+                            <uc:CvElementInfo Category="Cell" Region="414, 403, 21, 26" />
+                            <uc:CvElementInfo Category="Cell" Region="435, 307, 26, 21" />
+                            <uc:CvElementInfo Category="Cell" Region="435, 328, 26, 26" />
+                            <uc:CvElementInfo Category="Cell" Region="435, 354, 26, 23" />
+                            <uc:CvElementInfo Category="Cell" Region="435, 377, 26, 26" />
+                            <uc:CvElementInfo Category="Cell" Region="435, 403, 26, 26" />
+                            <uc:CvElementInfo Category="Cell" Region="461, 307, 175, 21" />
+                            <uc:CvElementInfo Category="Cell" Region="461, 328, 175, 26" />
+                            <uc:CvElementInfo Category="Cell" Region="461, 354, 175, 23" />
+                            <uc:CvElementInfo Category="Cell" Region="461, 377, 175, 26" />
+                            <uc:CvElementInfo Category="Cell" Region="461, 403, 175, 26" />
+                            <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="179, 309, 237, 24" />
+                            <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="240, 22, 62, 21" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="417, 405, 19, 24" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="144, 311, 20, 22" />
+                            <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="418, 394, 18, 12" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="419, 348, 15, 28" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="418, 382, 18, 26" />
+                            <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="143, 298, 18, 12" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="144, 285, 19, 25" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="139, 22, 99, 21" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="418, 395, 17, 11" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="418, 407, 17, 12" />
+                            <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="145, 316, 17, 17" />
+                            <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="308, 21, 55, 21" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="418, 348, 17, 61" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="421, 361, 14, 14" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="140, 24, 16, 20" />
+                            <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="5, 22, 59, 20" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="144, 298, 17, 11" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="145, 310, 16, 12" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="0, 46, 11, 23" />
+                            <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="4, 43, 64, 27" />
+                            <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="418, 346, 18, 31" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="145, 252, 16, 28" />
+                            <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="367, 23, 44, 19" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="395, 311, 20, 23" />
+                            <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="40, 46, 23, 22" />
+                            <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="417, 410, 18, 20" />
+                            <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="144, 287, 17, 24" />
+                          </scg:List>
+                        </uc:CVCache.CvUiElements>
+                        <uc:CVCache.OcrTexts>
+                          <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="69">
+                            <uc:OcrTextInfo Region="21, 4, 44, 14" Text="Sistema" />
+                            <uc:OcrTextInfo Region="66, 5, 42, 15" Text="Integral" />
+                            <uc:OcrTextInfo Region="108, 4, 17, 14" Text="de" />
+                            <uc:OcrTextInfo Region="125, 5, 46, 13" Text="Ordenes" />
+                            <uc:OcrTextInfo Region="171, 5, 17, 13" Text="de" />
+                            <uc:OcrTextInfo Region="188, 5, 45, 15" Text="Compra" />
+                            <uc:OcrTextInfo Region="356, 4, 46, 13" Text="PRUEBA" />
+                            <uc:OcrTextInfo Region="402, 6, 7, 11" Text="-" />
+                            <uc:OcrTextInfo Region="410, 4, 107, 14" Text="DESARROLLADORA" />
+                            <uc:OcrTextInfo Region="516, 4, 45, 13" Text="CARPIN" />
+                            <uc:OcrTextInfo Region="561, 4, 17, 14" Text="SA" />
+                            <uc:OcrTextInfo Region="578, 5, 17, 13" Text="DE" />
+                            <uc:OcrTextInfo Region="595, 5, 19, 13" Text="CV" />
+                            <uc:OcrTextInfo Region="1796, 0, 15, 13" Text="_" />
+                            <uc:OcrTextInfo Region="1887, 2, 15, 14" Text="X" />
+                            <uc:OcrTextInfo Region="9, 26, 47, 12" Text="Maestros" />
+                            <uc:OcrTextInfo Region="71, 26, 62, 13" Text="Presupuesto" />
+                            <uc:OcrTextInfo Region="148, 25, 47, 13" Text="Procesos" />
+                            <uc:OcrTextInfo Region="195, 25, 35, 13" Text="Diarios" />
+                            <uc:OcrTextInfo Region="246, 25, 51, 13" Text="Consultas" />
+                            <uc:OcrTextInfo Region="312, 26, 47, 14" Text="Reportes" />
+                            <uc:OcrTextInfo Region="368, 25, 35, 15" Text="Ayuda" />
+                            <uc:OcrTextInfo Region="414, 26, 43, 12" Text="Ventana" />
+                            <uc:OcrTextInfo Region="472, 25, 22, 13" Text="Salir" />
+                            <uc:OcrTextInfo Region="197, 49, 46, 14" Text="Anticipos" />
+                            <uc:OcrTextInfo Region="198, 74, 66, 13" Text="Requisiciones" />
+                            <uc:OcrTextInfo Region="198, 97, 37, 12" Text="Cuadro" />
+                            <uc:OcrTextInfo Region="235, 98, 65, 13" Text="Comparativo" />
+                            <uc:OcrTextInfo Region="198, 121, 57, 13" Text="Generacion" />
+                            <uc:OcrTextInfo Region="254, 120, 16, 14" Text="de" />
+                            <uc:OcrTextInfo Region="269, 121, 26, 13" Text="o.C." />
+                            <uc:OcrTextInfo Region="198, 145, 43, 13" Text="Ordenes" />
+                            <uc:OcrTextInfo Region="242, 145, 15, 13" Text="de" />
+                            <uc:OcrTextInfo Region="257, 146, 40, 13" Text="Compra" />
+                            <uc:OcrTextInfo Region="198, 169, 61, 13" Text="Autorizacion" />
+                            <uc:OcrTextInfo Region="259, 169, 19, 13" Text="OC" />
+                            <uc:OcrTextInfo Region="198, 193, 100, 14" Text="Ajustes/Cancelacion" />
+                            <uc:OcrTextInfo Region="298, 193, 24, 13" Text="o.C." />
+                            <uc:OcrTextInfo Region="198, 218, 38, 13" Text="Ajustes" />
+                            <uc:OcrTextInfo Region="236, 218, 19, 11" Text="OC" />
+                            <uc:OcrTextInfo Region="255, 218, 7, 11" Text="-" />
+                            <uc:OcrTextInfo Region="262, 217, 52, 13" Text="Tolerancia" />
+                            <uc:OcrTextInfo Region="198, 241, 45, 13" Text="Entradas" />
+                            <uc:OcrTextInfo Region="243, 240, 16, 14" Text="de" />
+                            <uc:OcrTextInfo Region="259, 241, 43, 13" Text="Almacen" />
+                            <uc:OcrTextInfo Region="144, 250, 17, 60" Text="I" />
+                            <uc:OcrTextInfo Region="198, 266, 51, 13" Text="Traspasos" />
+                            <uc:OcrTextInfo Region="250, 267, 9, 11" Text="a" />
+                            <uc:OcrTextInfo Region="259, 266, 22, 12" Text="otro" />
+                            <uc:OcrTextInfo Region="281, 265, 24, 13" Text="c.C." />
+                            <uc:OcrTextInfo Region="198, 290, 43, 12" Text="Insumos" />
+                            <uc:OcrTextInfo Region="241, 289, 47, 13" Text="Recibidos" />
+                            <uc:OcrTextInfo Region="289, 291, 18, 13" Text="por" />
+                            <uc:OcrTextInfo Region="308, 289, 33, 13" Text="Orden" />
+                            <uc:OcrTextInfo Region="341, 290, 40, 13" Text="Compra" />
+                            <uc:OcrTextInfo Region="196, 313, 64, 13" Text="Movimientos" />
+                            <uc:OcrTextInfo Region="260, 313, 15, 12" Text="No" />
+                            <uc:OcrTextInfo Region="275, 312, 73, 14" Text="Inventariables" />
+                            <uc:OcrTextInfo Region="471, 313, 28, 13" Text="Mtto." />
+                            <uc:OcrTextInfo Region="501, 313, 45, 13" Text="Remision" />
+                            <uc:OcrTextInfo Region="472, 337, 51, 15" Text="Recepcion" />
+                            <uc:OcrTextInfo Region="523, 337, 43, 13" Text="Insumos" />
+                            <uc:OcrTextInfo Region="472, 361, 51, 15" Text="Recepcion" />
+                            <uc:OcrTextInfo Region="523, 361, 32, 13" Text="Global" />
+                            <uc:OcrTextInfo Region="555, 361, 43, 13" Text="Insumos" />
+                            <uc:OcrTextInfo Region="472, 385, 44, 13" Text="Consulta" />
+                            <uc:OcrTextInfo Region="517, 385, 45, 13" Text="Remision" />
+                            <uc:OcrTextInfo Region="472, 410, 24, 13" Text="Rep." />
+                            <uc:OcrTextInfo Region="498, 409, 45, 13" Text="Remision" />
+                          </scg:List>
+                        </uc:CVCache.OcrTexts>
+                      </uc:CVCache>
+                    </scg:List>
+                  </uc:CvCacheContainer.Caches>
+                </uc:CvCacheContainer>
+              </p:CVScope.DesignTimeCacheContainer>
+              <p:CVScope.OCREngine>
+                <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                  <ActivityFunc.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                  </ActivityFunc.Argument>
+                  <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="400,25" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_2" Image="[Image]" Language="en" NoopExecution="False" Profile="Screen" Scale="1" Timeout="100000" />
+                </ActivityFunc>
+              </p:CVScope.OCREngine>
+              <p:CVScope.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="461b611f-1dd7-4902-8d09-408449143ae0" InformativeScreenshot="e4e9639023a0d684de2041f78945d9bc" WaitForReady="INTERACTIVE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </p:CVScope.Target>
+              <p:CVScope.UseLocalServer>
+                <InArgument x:TypeArguments="x:Boolean" />
+              </p:CVScope.UseLocalServer>
+            </p:CVScope>
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Sistema Integral de Ordenes de Compra                                          D" sap:VirtualizedContainerService.HintSize="1022,7029" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Timeout="60" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="988,6476" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="988,6711" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -657,6 +980,38 @@
                         <InArgument x:TypeArguments="x:Boolean" />
                       </p:CVScope.UseLocalServer>
                     </p:CVScope>
+                    <If Condition="[dtInsumos.rowcount  &lt;= 0]" sap:VirtualizedContainerService.HintSize="954,527" sap2010:WorkflowViewState.IdRef="If_6">
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,298" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Cerrar" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="1909, 31, 19, 19" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Cerrar'" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Aplicación' role='menu bar' /&gt;&lt;ctrl name='Cerrar' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='MenuBar' name='Aplicación' role='menu bar' /&gt;&lt;ctrl name='Cerrar' role='push button' automationid='' check:text='Cerrar' /&gt;" Guid="bc479820-b92d-470d-a063-cb95f94494ce" InformativeScreenshot="fe8d4cc8d79e1d6a70aa59656cc9959e.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='FNWND*' title='Sistema Integral de Ordenes de Compra                           *' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NClick>
+                          <ui:Return sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="Return_1" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
                     <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="954,190" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable CvElementArea="501, 114, 57, 21" CvType="InputBox" DesignTimeRectangle="510, 123, 56, 20" DesignTimeScaleFactor="1" FriendlyName="'PBEDIT115'" FullSelectorArgument="&lt;wnd cls='PBEDIT115' idx='10' /&gt;" FuzzySelectorArgument="&lt;wnd cls='PBEDIT115' /&gt;" Guid="90b7eb01-09e5-42c2-aa7c-549ba6e6196d" InformativeScreenshot="f012aab911785ad16a8f74c9df1bb9dc.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='FNWND*' title='Sistema Integral de Ordenes de Compra                           *' /&gt;&lt;wnd cls='FNWND*' title='Recepción Global Insumos No Inventariables  [W_SOC238]' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
@@ -669,42 +1024,18 @@
                       </uix:NClick.Target>
                     </uix:NClick>
                     <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="954,218" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_7" Shortcuts="[d(hk)][k(Tab)][u(hk)][d(hk)][k(Tab)][u(hk)][d(hk)][k(Tab)][u(hk)][d(hk)][k(Tab)][u(hk)][d(hk)][k(Tab)][u(hk)][d(hk)][k(Tab)][u(hk)][d(hk)][k(Tab)][u(hk)][d(hk)][k(Tab)][u(hk)][d(hk)][k(Tab)][u(hk)][d(hk)][k(tab)][u(hk)]" Version="V3" />
-                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[vIndice]" DataTable="[dtInsumos]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="954,1449" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[vIndice]" DataTable="[dtInsumos]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="954,1304" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                       <ui:ForEachRow.Body>
                         <ActivityAction x:TypeArguments="sd2:DataRow">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="sd2:DataRow" Name="CurrentRow" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,1267" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                            <Sequence.Variables>
-                              <Variable x:TypeArguments="x:Int32" Name="vContador" />
-                            </Sequence.Variables>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,1122" sap2010:WorkflowViewState.IdRef="Sequence_5">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[vIndice&gt; 0]" DisplayName="Si el indice va en el segundo renglon" sap:VirtualizedContainerService.HintSize="452,492" sap2010:WorkflowViewState.IdRef="If_5">
-                              <If.Then>
-                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,263" sap2010:WorkflowViewState.IdRef="Sequence_15">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="416,203" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_12" Shortcuts="[d(hk)][k(Tab)][u(hk)][d(hk)][k(Tab)][u(hk)][d(hk)][k(Tab)][u(hk)][d(hk)][k(Tab)][u(hk)]" Version="V3" />
-                                </Sequence>
-                              </If.Then>
-                              <If.Else>
-                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_16">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </Sequence>
-                              </If.Else>
-                            </If>
                             <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_1">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Double">[vImporte]</OutArgument>
@@ -713,7 +1044,29 @@
                                 <InArgument x:TypeArguments="x:Double">[Cdec(CurrentRow("Importe"))]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <If Condition="[vImporte &lt; 0]" DisplayName="Si el importe es menor que cero" sap:VirtualizedContainerService.HintSize="452,540" sap2010:WorkflowViewState.IdRef="If_4">
+                            <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_4">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Int32">[pixelOffset]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Int32">[CInt(vIndice * 19)]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="1" DisplayName="Click 'Cantidad Recibida'" sap:VirtualizedContainerService.HintSize="452,190" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable CvTextArea="847, 195, 69, 12" CvTextArgument="2,704.300000" CvType="Text" DesignTimeRectangle="792, 200, 129, 15" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'2,704.300000'" FullSelectorArgument="&lt;wnd cls='FNWND*' title='Recepción Global Insumos No Inventariables  [W_SOC238]' /&gt;&lt;wnd cls='pbdw115' idx='5' /&gt;&lt;ctrl name='so_orden_compra_det_c_cantidad_recibe' role='editable text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='FNWND*' title='Recepción Global Insumos No Inventariables  [W_SOC238]' /&gt;&lt;wnd cls='pbdw115' /&gt;&lt;ctrl name='so_orden_compra_det_c_cantidad_recibe' role='editable text' automationid='' /&gt;" Guid="3c3041b2-fdf9-499f-8d86-951413ed995a" InformativeScreenshot="879eb55b4242343cc30f764c2d0699a9.png" IsResponsive="True" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='FNWND*' title='Sistema Integral de Ordenes de Compra                           *' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                      <uix:Target CvTextArea="805, 177, 89, 13" CvTextArgument="Cantidad Recibida" CvType="Text" DesignTimeRectangle="792, 183, 129, 14" ElementType="Text" FriendlyName="'Cantidad Recibida'" FullSelectorArgument="&lt;wnd cls='FNWND*' title='Recepción Global Insumos No Inventariables  [W_SOC238]' /&gt;&lt;wnd cls='pbdw115' idx='5' /&gt;&lt;ctrl name='t_6' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='FNWND*' title='Recepción Global Insumos No Inventariables  [W_SOC238]' /&gt;&lt;wnd cls='pbdw115' /&gt;&lt;ctrl name='t_6' role='text' automationid='' check:text='Cantidad Recibida' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                  <uix:TargetAnchorable.PointOffset>
+                                    <uix:PointOffset X="0" Y="[pixelOffset]" />
+                                  </uix:TargetAnchorable.PointOffset>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <If Condition="[vImporte &lt; 0]" DisplayName="Si el importe es menor que cero" sap:VirtualizedContainerService.HintSize="452,522" sap2010:WorkflowViewState.IdRef="If_4">
                               <If.Then>
                                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,302" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -721,42 +1074,20 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBetweenKeys="0.01" DisplayName="Type Into Tabla" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,242" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Text="[k(home)][d(lshift)][k(end)][u(lshift)][k(del)]0.00" Version="V3">
+                                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="2" DisplayName="Poner ceros si es negativo" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,242" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Text="%[k(home)][d(lshift)][k(end)][u(lshift)][k(del)]0.00[k(enter)]" Version="V3">
                                     <uix:NTypeInto.Target>
-                                      <uix:TargetAnchorable DesignTimeRectangle="296, 181, 1632, 316" DesignTimeScaleFactor="1" FriendlyName="'2'" FullSelectorArgument="&lt;wnd cls='pbdw115' idx='5' /&gt;" FuzzySelectorArgument="&lt;wnd cls='pbdw115' check:text='2' /&gt;" Guid="266b73c8-46cb-4480-9846-795947f30d05" InformativeScreenshot="7b0b3f1ccb5eef4fd5764f27a6769a1c.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='FNWND*' title='Sistema Integral de Ordenes de Compra                           *' /&gt;&lt;wnd cls='FNWND*' title='Recepción Global Insumos No Inventariables  [W_SOC238]' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                                      <uix:TargetAnchorable DesignTimeRectangle="296, 181, 1632, 316" DesignTimeScaleFactor="1" FriendlyName="'2'" FullSelectorArgument="&lt;wnd cls='pbdw115' /&gt;" FuzzySelectorArgument="&lt;wnd cls='pbdw115' check:text='2' /&gt;" Guid="32a06587-25f9-427d-a8d8-3f588936d99d" InformativeScreenshot="da9e10d689216fba58d5335c52efc599.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='FNWND*' title='Sistema Integral de Ordenes de Compra                           *' /&gt;&lt;wnd cls='FNWND*' title='Recepción Global Insumos No Inventariables  [W_SOC238]' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
                                     </uix:NTypeInto.Target>
                                   </uix:NTypeInto>
                                 </Sequence>
                               </If.Then>
                               <If.Else>
-                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                                    <ui:CommentOut.Body>
-                                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,302" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBetweenKeys="0.01" DisplayName="Type Into Tabla" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,242" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Text="[&quot;[k(home)][d(shift)][k(end)][u(shift)][k(del)]&quot; + CurrentRow(&quot;Cantidad Recibida&quot;).ToString.Trim + &quot;[k(enter)]&quot;]" Version="V3">
-                                          <uix:NTypeInto.Target>
-                                            <uix:TargetAnchorable DesignTimeRectangle="296, 181, 1632, 316" DesignTimeScaleFactor="1" FriendlyName="'2'" FullSelectorArgument="&lt;wnd cls='pbdw115' idx='5' /&gt;" FuzzySelectorArgument="&lt;wnd cls='pbdw115' check:text='2' /&gt;" Guid="266b73c8-46cb-4480-9846-795947f30d05" InformativeScreenshot="7b0b3f1ccb5eef4fd5764f27a6769a1c.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='FNWND*' title='Sistema Integral de Ordenes de Compra                           *' /&gt;&lt;wnd cls='FNWND*' title='Recepción Global Insumos No Inventariables  [W_SOC238]' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
-                                          </uix:NTypeInto.Target>
-                                        </uix:NTypeInto>
-                                      </Sequence>
-                                    </ui:CommentOut.Body>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </ui:CommentOut>
                                 </Sequence>
                               </If.Else>
                             </If>
@@ -768,7 +1099,7 @@
                       <uix:NClick.Target>
                         <uix:TargetAnchorable DesignTimeRectangle="374, 52, 22, 27" DesignTimeScaleFactor="1" FriendlyName="'compras.exe Sistema'" Guid="9365d25c-b0aa-463d-bac0-59a5013d66ef" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABYAAAAbCAYAAAB4Kn/lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEESURBVEhLY3hw795/bLiyZ9L/65eegHFO3Yz/Hz58IAkzwDSD8NlLj+Bsig0+fvnhf2wYZDDIIhCOK1+GoZEQZjhy+u5/bBhkMIxNlsGXz3T/x4aRDQ7MWIOhkRBmABmADU9bfP3/jj0PwZgsg9euffofF96y7z6YJstgh9h1/9Hx6m03UbBT1BYMjYQwA3r6BYUvuuEgPrpGQpihtOvmfxiGhS/IoHkr78IxWQbPWf7sPwxPXL4IjNENNrI/gqGREEZJbsbeS+BBAUoVMKzvsR9DIyHMANJEDEbXSAgzoAtQC48aDMcMCxYs+E8LzJCZmfmfFph2QYEuQC08ajAcjxoMxwADQjSPekbp4gAAAABJRU5ErkJggg==" InformativeScreenshot="02549605e734024880033d3dc106c0e9.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='FNWND*' title='Sistema Integral de Ordenes de Compra                           *' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                               <uix:Target CvTextArea="325, 25, 49, 13" CvTextArgument="Consultas" CvType="Text" DesignTimeRectangle="324, 31, 65, 19" FriendlyName="'menu item'" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Aplicación' role='menu bar' /&gt;&lt;ctrl idx='6' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='MenuBar' name='Aplicación' role='menu bar' /&gt;&lt;ctrl automationid='' role='menu item' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>
@@ -781,126 +1112,87 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </uix:NClick>
-                    <uix:NCheckState DisplayName="Almacen no existe" sap:VirtualizedContainerService.HintSize="954,496" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Version="V3">
-                      <uix:NCheckState.IfExists>
-                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,245" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                    <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="954,123" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                    <ui:UiElementExists DisplayName="Element Exists 'Static'" Exists="[bolGuardar]" sap:VirtualizedContainerService.HintSize="954,139" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f3cfff19-5516-4019-92ec-c582a7cccad9" InformativeScreenshot="c86a28a4e138cd3a4d296459f41cbc94" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='#32770' title='Aviso' /&gt;&lt;wnd ctrlid='65535' title='¿ Esta Seguro de Grabar el Movimiento ? ' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:UiElementExists.Target>
+                    </ui:UiElementExists>
+                    <If Condition="[bolGuardar = true]" DisplayName="If existe Elemento para Guardar" sap:VirtualizedContainerService.HintSize="954,470" sap2010:WorkflowViewState.IdRef="If_7">
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,241" sap2010:WorkflowViewState.IdRef="Sequence_30">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Aceptar'" sap:VirtualizedContainerService.HintSize="416,183" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Version="V3">
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;Sí'" sap:VirtualizedContainerService.HintSize="416,181" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Version="V3">
                             <uix:NClick.Target>
-                              <uix:TargetAnchorable CvElementArea="273, 121, 89, 27" CvTextArea="294, 128, 44, 15" CvTextArgument="Aceptar" CvType="Button" DesignTimeRectangle="273, 122, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Aceptar'" FullSelectorArgument="&lt;wnd ctrlid='2' title='Aceptar' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='2' title='Aceptar' check:text='Aceptar' /&gt;" Guid="ea386da5-f6fd-49d5-a03e-08c14f6db450" InformativeScreenshot="1e56fccbe08586c655998742e6e69414.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='#32770' title='Error de Captura' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                              <uix:TargetAnchorable CvElementArea="116, 122, 89, 27" CvTextArea="154, 128, 13, 12" CvTextArgument="Si" CvType="Button" DesignTimeRectangle="117, 122, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'&amp;Sí'" FullSelectorArgument="&lt;wnd ctrlid='6' title='&amp;amp;Sí' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='6' title='&amp;amp;Sí' check:text='&amp;amp;Sí' /&gt;" Guid="fa048a5e-fc3f-4d1d-8a92-b31f1776c25e" InformativeScreenshot="1ad8a69d6ca24a7bac7472b788ecedde.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='#32770' title='Aviso' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CvTextArea="67, 60, 213, 16" CvTextArgument="¿ Esta Seguro de Grabar el Movimiento ?" CvType="Text" DesignTimeRectangle="68, 60, 215, 17" ElementType="Text" FriendlyName="'¿ Esta'" FullSelectorArgument="&lt;wnd ctrlid='65535' title='¿ Esta Seguro de Grabar el Movimiento ? ' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='65535' title='¿ Esta Seguro de Grabar el Movimiento ? ' check:text='¿ Esta Seguro de Grabar el Movimiento ?' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
                             </uix:NClick.Target>
                           </uix:NClick>
                         </Sequence>
-                      </uix:NCheckState.IfExists>
-                      <uix:NCheckState.IfNotExists>
-                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_31">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </Sequence>
-                      </uix:NCheckState.IfNotExists>
-                      <uix:NCheckState.Target>
-                        <uix:TargetAnchorable DesignTimeRectangle="0, 0, 382, 162" DesignTimeScaleFactor="1" FriendlyName="'Error de Captura'" Guid="7bd1fa24-729d-4d4f-ad00-e161881d7e22" InformativeScreenshot="f3eefddf95c7191736c4d18ad2d8a00f.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='#32770' title='Error de Captura' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
-                          <uix:TargetAnchorable.FuzzySelectorArgument>
-                            <InArgument x:TypeArguments="x:String">
-                              <Literal x:TypeArguments="x:String" Value="" />
-                            </InArgument>
-                          </uix:TargetAnchorable.FuzzySelectorArgument>
-                        </uix:TargetAnchorable>
-                      </uix:NCheckState.Target>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </uix:NCheckState>
-                    <uix:NCheckState DisplayName="Check App State Empleado no existe" sap:VirtualizedContainerService.HintSize="954,496" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Version="V3">
-                      <uix:NCheckState.IfExists>
-                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,245" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                      </If.Else>
+                    </If>
+                    <ui:UiElementExists DisplayName="Element Exists 'Static'" Exists="[bolNoHayElementos]" sap:VirtualizedContainerService.HintSize="954,139" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="db2d9cf6-a5be-40ed-a675-0a8882fa26d8" InformativeScreenshot="f1bf21b376016828000adbe55da3f6a3" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='#32770' title='Aviso' /&gt;&lt;wnd ctrlid='65535' title='No hay registros para hacer la Entrada' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:UiElementExists.Target>
+                    </ui:UiElementExists>
+                    <If Condition="[bolNoHayElementos = true]" sap:VirtualizedContainerService.HintSize="954,470" sap2010:WorkflowViewState.IdRef="If_9">
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,241" sap2010:WorkflowViewState.IdRef="Sequence_35">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Aceptar'" sap:VirtualizedContainerService.HintSize="416,183" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Version="V3">
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Aceptar'" sap:VirtualizedContainerService.HintSize="416,181" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Version="V3">
                             <uix:NClick.Target>
-                              <uix:TargetAnchorable CvElementArea="113, 121, 89, 27" CvTextArea="134, 128, 44, 15" CvTextArgument="Aceptar" CvType="Button" DesignTimeRectangle="113, 122, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Aceptar'" FullSelectorArgument="&lt;wnd ctrlid='2' title='Aceptar' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='2' title='Aceptar' check:text='Aceptar' /&gt;" Guid="cf68a45a-1f9a-4e59-a2ee-fd3210ed264e" InformativeScreenshot="a77a7c0310518d75c1c94bdea6704309.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='#32770' title='Error de Captura' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                              <uix:TargetAnchorable CvElementArea="197, 121, 89, 27" CvTextArea="218, 128, 44, 15" CvTextArgument="Aceptar" CvType="Button" DesignTimeRectangle="197, 122, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Aceptar'" FullSelectorArgument="&lt;wnd ctrlid='2' title='Aceptar' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='2' title='Aceptar' check:text='Aceptar' /&gt;" Guid="86121b11-33c9-492c-9184-31c4b3348b84" InformativeScreenshot="b0e325c09ac5bae6f492f1705ce77548.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='#32770' title='Aviso' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                             </uix:NClick.Target>
                           </uix:NClick>
                         </Sequence>
-                      </uix:NCheckState.IfExists>
-                      <uix:NCheckState.IfNotExists>
-                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_36">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </Sequence>
-                      </uix:NCheckState.IfNotExists>
-                      <uix:NCheckState.Target>
-                        <uix:TargetAnchorable DesignTimeRectangle="0, 0, 223, 162" DesignTimeScaleFactor="1" FriendlyName="'Error de Captura'" Guid="3710d7cf-573a-4fc2-8119-353c5f0fea7a" InformativeScreenshot="993db4ca3e441cb7270afd31f89eb5a0.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='#32770' title='Error de Captura' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
-                          <uix:TargetAnchorable.FuzzySelectorArgument>
-                            <InArgument x:TypeArguments="x:String">
-                              <Literal x:TypeArguments="x:String" Value="" />
-                            </InArgument>
-                          </uix:TargetAnchorable.FuzzySelectorArgument>
-                        </uix:TargetAnchorable>
-                      </uix:NCheckState.Target>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </uix:NCheckState>
-                    <uix:NCheckState DisplayName="Esta seguro de guardar?" sap:VirtualizedContainerService.HintSize="954,496" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Version="V3">
-                      <uix:NCheckState.IfExists>
-                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,245" sap2010:WorkflowViewState.IdRef="Sequence_19">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;Sí'" sap:VirtualizedContainerService.HintSize="416,183" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Version="V3">
-                            <uix:NClick.Target>
-                              <uix:TargetAnchorable CvElementArea="116, 122, 89, 27" CvTextArea="154, 128, 13, 12" CvTextArgument="Si" CvType="Button" DesignTimeRectangle="117, 122, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'&amp;Sí'" FullSelectorArgument="&lt;wnd ctrlid='6' title='&amp;amp;Sí' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='6' title='&amp;amp;Sí' check:text='&amp;amp;Sí' /&gt;" Guid="65636774-1278-4f45-ab5c-2c7b1b99e699" InformativeScreenshot="a271504f266df629ece31f18263719e3.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='#32770' title='Aviso' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
-                            </uix:NClick.Target>
-                          </uix:NClick>
-                        </Sequence>
-                      </uix:NCheckState.IfExists>
-                      <uix:NCheckState.IfNotExists>
-                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Sequence_23">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </Sequence>
-                      </uix:NCheckState.IfNotExists>
-                      <uix:NCheckState.Target>
-                        <uix:TargetAnchorable DesignTimeRectangle="0, 0, 323, 162" DesignTimeScaleFactor="1" FriendlyName="'Aviso'" Guid="d6209937-b6fe-489c-bf9a-4df79ba0df96" InformativeScreenshot="c41d61c62f79e142b6b156b588bedb18.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='Session - 35.239.213.26 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='compras.exe' cls='#32770' title='Aviso' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
-                          <uix:TargetAnchorable.FuzzySelectorArgument>
-                            <InArgument x:TypeArguments="x:String">
-                              <Literal x:TypeArguments="x:String" Value="" />
-                            </InArgument>
-                          </uix:TargetAnchorable.FuzzySelectorArgument>
-                        </uix:TargetAnchorable>
-                      </uix:NCheckState.Target>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </uix:NCheckState>
+                      </If.Else>
+                    </If>
                     <uix:NCheckState DisplayName="Check App State 'Impresion de Documentos'" sap:VirtualizedContainerService.HintSize="954,496" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="6951b1c5-27a8-4e6c-a955-e9cb5303558e" Version="V3">
                       <uix:NCheckState.IfExists>
                         <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,245" sap2010:WorkflowViewState.IdRef="Sequence_20">
